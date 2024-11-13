@@ -64,6 +64,158 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{route('about.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>About</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('configuration.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Configuration</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('user.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>User</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('policies.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Policies</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle=""  href="{{route('sliders.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Sliders</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('testimonials.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Testimonials</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('faq.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>FAQ</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('features.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Features</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('offer.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Offer</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('rdp.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Windows RDP</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('rdpplan.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Windows RDP Plan</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('hosting.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Web Hosting</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('rdplocation.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>RDP By Location</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('rdplocationplan.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>RDP By Location Plan</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('hostingplan.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Web Hosting Plan</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('vps.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>CLOUD VPS</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('vpsplan.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>CLOUD VPS Plan</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('dedicated.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Dedicated Server</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('dedicatedplan.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p> Dedicated Server Plans</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('category.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Categories</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="" href="{{route('category.index')}}">
+                                <i class="fas fa-layer-group"></i>
+                                <p>Blogs</p>
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+
+
+
+
+
 
 
                     </ul>
