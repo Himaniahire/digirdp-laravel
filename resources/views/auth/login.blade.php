@@ -88,12 +88,22 @@
         @csrf
       <div class="form-group ">
         <label for="email2">Email Address</label>
-        <input type="email" class="form-control" name="email" id="email2" placeholder="Enter Email" />
+        <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email" id="email2" placeholder="Enter Email" required />
         <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
       </div>
       <div class="form-group ">
         <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password" />
+        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required/>
+        @error('password')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
       </div>
       <div class="form-group text-center">
         <button class="btn btn-primary">Submit</button>
