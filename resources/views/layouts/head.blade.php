@@ -9,7 +9,7 @@
     />
     <link
       rel="icon"
-      href="{{ asset('assets/img/kaiadmin/favicon.ico')}}"
+      href="{{ asset('assets/img/digirpd-logo/bgwithoutbg.ico')}}"
       type="image/x-icon"
     />
 
