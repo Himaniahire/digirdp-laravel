@@ -16,7 +16,7 @@ class Configuration extends Controller
         'index' => 'configuration.index',
     );
     private $view = array(
-        'index' => 'admin.configuration.index');
+        'index' => 'configuration.index');
 
     private $updationSuccess = 'Record updated Successfully';
     private $singlepostvar = "user_details";
