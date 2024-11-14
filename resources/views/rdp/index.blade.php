@@ -77,7 +77,7 @@
                                                 @endforeach
                                                 <td class="actions">
                                                     <a href="{{ route($route['show'], $notice->id)}}">
-                                                        <button class="btn btn-sm btn-primary">
+                                                        <button class="btn btn-sm btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                                         </button>
                                                     </a>

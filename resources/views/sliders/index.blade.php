@@ -81,7 +81,7 @@
                                                         <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
                                                     {!! Form::close() !!} --}}
                                                     <a href="{{ route($route['show'], $notice->id)}}">
-                                                        <button class="btn btn-sm btn-primary">
+                                                        <button class="btn btn-sm btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
