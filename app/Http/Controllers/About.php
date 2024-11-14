@@ -16,7 +16,7 @@ class About extends Controller
         'index' => 'about.index',
     );
     private $view = array(
-        'index' => 'admin.about.index');
+        'index' => 'about.index');
 
     private $updationSuccess = 'Record updated Successfully';
     private $singlepostvar = "user_details";

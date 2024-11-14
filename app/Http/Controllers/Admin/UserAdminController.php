@@ -12,7 +12,7 @@ use App\Models\User;
 class UserAdminController extends Controller
 {
     private $uploadPath     = "uploads/user";
-    
+
     private $modelname      = "App\Models\User";
     private $imageinputname = "user_image";
 
@@ -24,10 +24,10 @@ class UserAdminController extends Controller
         'update' => 'user.update',
         'destroy' => 'user.destroy',
     );
-    private $view = array('create' => 'admin.user.create',
-        'edit' => 'admin.user.edit',
-        'index' => 'admin.user.index',
-        'show' => 'admin.user.show');
+    private $view = array('create' => 'user.create',
+        'edit' => 'user.edit',
+        'index' => 'user.index',
+        'show' => 'user.show');
 
     private $indexvariables = array(
         'title' => 'ALL USER',
@@ -92,7 +92,7 @@ class UserAdminController extends Controller
                 'required' => ''
             )
         ),
-       
+
     );
     private $formfields = array(
         'name' => array('name'  =>  'name',
@@ -141,8 +141,6 @@ class UserAdminController extends Controller
         'id' => array('label' => '#'),
         'name'  => array('label' => 'Name' ),
         'email'  => array('label' => 'Email' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -152,8 +150,6 @@ class UserAdminController extends Controller
         'id' => array('label' => 'USER ID'),
         'name'  => array('label' => 'Name' ),
         'email'  => array('label' => 'Email' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -210,7 +206,7 @@ class UserAdminController extends Controller
 
     public function processFile( $request, $update = 0)
     {
-       
+
             if ($request->file('feature_image')->isValid())
             {
                 $imginpname = $request->file('feature_image');
@@ -237,8 +233,8 @@ class UserAdminController extends Controller
      */
     public function store(Request $request)
     {
-       
-        
+
+
         $imageName = null;
         $this->validate($request, $this->validation_rules);
         //dd($request);
@@ -263,18 +259,18 @@ class UserAdminController extends Controller
         $post->feature_image = $this->processFile($request);
         $post->permission = json_encode($request->permission);
         $post->deletep = $request->delete;
-       
-        
+
+
         $post->save();
 
         Session::flash('success', $this->saveSuccess);
 
         return redirect()->route($this->route['show'], $post->id);
     }
-    
-   
-    
-    
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -304,7 +300,7 @@ class UserAdminController extends Controller
     {
         $fields = $this->formfields_edit;
         $post = $this->modelname::find($id);
-       
+
         return view($this->view['edit'])->with($this->singlepostvar ,$post)
             ->with('route', $this->route)
             ->with('fields', $fields)
@@ -321,12 +317,12 @@ class UserAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+
         $imageName = null;
         $post = $this->modelname::find($id);
 
         $updaterules = $this->update_validation_rules;
-      
+
         $this->validate($request, $updaterules);
         foreach ($this->formfields as $fieldname => $fieldvalue) {
             if(strcmp($fieldname, $this->imageinputname)) {
@@ -342,7 +338,7 @@ class UserAdminController extends Controller
         }
          $post->role = $request->role;
         $post->permission = json_encode($request->permission);
-        if($request->has('feature_iamge')):    
+        if($request->has('feature_iamge')):
             $post->feature_image = $this->processFile($request);
         endif;
         $post->deletep = $request->delete;
