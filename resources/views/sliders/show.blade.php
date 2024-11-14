@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Policies</h3>
+                    <h3 class="fw-bold mb-3">Sliders</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -21,7 +21,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Detail</a>
+                          <a href="#">Sliders</a>
                         </li>
                     </ul>
             </div>
@@ -46,10 +46,9 @@
                                     <tr>
                                         <td>{{$loop->index + 1}}</td>
                                         <td>{{ucwords($fv['label'])}}</td>
-                                        @if(strpos($field,"file"))
+                                        @if(strpos($field,"image"))
 
-                                            <td><img src="{{url(${$singlepostvar}->$field)}}" width="200" height="200">
-                                            </td>
+                                            <td><img src="{{url(${$singlepostvar}->$field)}}" width="200" height="150"></td>
 
                                         @elseif(strpos($field,"file"))
                                             <td><a href="{{url(${$singlepostvar}->$field)}}">DOWNLOAD FILE</a></td>

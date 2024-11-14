@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                <h3 class="fw-bold mb-3">Policies</h3>
+                <h3 class="fw-bold mb-3">FAQ</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
                         <a href="#">
@@ -32,7 +32,7 @@
 
                         <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
                    </h4>
-
+                    
                 </div>
                 <div class="card-body">
                     <h4>
@@ -58,10 +58,10 @@
                                         </div>
                                         @if (!strcmp($fv['type'], 'text'))
                                             {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
-                                        @elseif(!strcmp($fv['type'], 'textarea'))
-                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
                                         @elseif(!strcmp($fv['type'], 'select'))
                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
+                                        @elseif(!strcmp($fv['type'], 'textarea'))
+                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
                                         @elseif(!strcmp($fv['type'], 'checkbox'))
                                             {!! Form::checkbox($fv['name'], $fv['default'], $fv['checked'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'radio'))

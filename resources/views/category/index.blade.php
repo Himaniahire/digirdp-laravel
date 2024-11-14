@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Policies</h3>
+                    <h3 class="fw-bold mb-3">Category</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -21,13 +21,21 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Policies</a>
+                          <a href="#">List</a>
                         </li>
                     </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
                 <div class="card" >
+                    <div class="card-header">
+				        <h4 class="title">Category
+				            <a href="{{ route('category.create') }}" class="btn btn-success pull-right">
+				            	<i class="fa fa-plus"></i> Add Category
+				            </a>
+
+			            </h4>
+			        </div>
                     <!-- Content goes here -->
                     <div class="card-body" >
                         @if(Session::has('post_msg'))
@@ -65,14 +73,14 @@
                                                 </td>
                                                 <td>{{ $bl->user->name ?? '' }}</td>
                                                 <td class="actions">
-                                                    <!-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
+                                                    {{-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
                                                         <button class="btn btn-sm btn-primary">
                                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                                         </button>
-                                                    </a> -->
+                                                    </a> --}}
                                                     <a href="{{ route('category.edit',['category'=>$bl->id]) }}">
                                                         <button class="btn btn-sm btn-warning">
-                                                            <i class="fa fa-pencil"></i>
+                                                            <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
                                                 </td>

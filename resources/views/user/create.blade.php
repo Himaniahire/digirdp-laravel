@@ -5,7 +5,7 @@
 <div class="container">
     <div class="page-inner">
       <div class="page-header">
-        <h3 class="fw-bold mb-3">About</h3>
+        <h3 class="fw-bold mb-3">User</h3>
         <ul class="breadcrumbs mb-3">
           <li class="nav-home">
             <a href="/">
@@ -22,7 +22,7 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">Edit</a>
+            <a href="#">Create</a>
           </li>
         </ul>
       </div>
@@ -90,10 +90,10 @@
                                         <div class="input-group-text"><i class="glyphicon glyphicon-pencil"></i></div>
                                     </div>
                                    	<select class="form-control border-input" name="permission[]" multiple>
-						    			{{-- @php $sidebarItem = Config::get('app.sidebar'); @endphp
+						    			@php $sidebarItem = Config::get('app.sidebar',[]); @endphp
 							    		@foreach($sidebarItem as $item)
 							    			<option value="{{ $item['label'] }}">{{ $item['label'] }}</option>
-							    		@endforeach; --}}
+							    		@endforeach;
 							    	</select>
                                 </div>
 				    		</div>

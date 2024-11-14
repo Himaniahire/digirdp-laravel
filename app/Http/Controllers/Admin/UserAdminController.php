@@ -288,6 +288,8 @@ class UserAdminController extends Controller
             ->with('singlepostvar', $this->singlepostvar)
             ->with('showvar', $this->showvariables)->with('feature_image',$post->feature_image)
             ->with('uploadPath',url($this->uploadPath));
+
+        // dd($post);
     }
 
     /**

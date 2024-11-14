@@ -66,8 +66,8 @@ class Policies extends Controller
 
     private $formfields = array(
         'name' => array('name'  =>  'name',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'name',
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'text',
@@ -79,8 +79,8 @@ class Policies extends Controller
             )
         ),
         'type' => array('name'  =>  'type',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Description',
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'select',
@@ -97,8 +97,8 @@ class Policies extends Controller
             )
         ),
         'content' => array('name'  =>  'content',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Content',
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
@@ -112,8 +112,8 @@ class Policies extends Controller
             )
         ),
         'start_date' => array('name'  =>  'start_date',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Policy Start Date',
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'text',

@@ -121,7 +121,7 @@ class CategoryController extends Controller
     {
 
         $category = Category::find($id);
-        return view( 'admin.category/edit', ['title' => 'Edit category', 'category' => $category] );
+        return view( 'category/edit', ['title' => 'Edit category', 'category' => $category] );
     }
 
 

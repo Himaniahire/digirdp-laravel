@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                <h3 class="fw-bold mb-3">Policies</h3>
+                <h3 class="fw-bold mb-3">RPD</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
                         <a href="#">
@@ -21,7 +21,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Policies</a>
+                        <a href="#">Edit</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
                                                         @elseif(!strcmp($fv['type'], "select"))
                                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "checkbox"))
-                                                            {!! Form::checkbox($fv['name'], $fv['default'], $fv['checked'],$fv['extras']) !!}
+                                                            {!! Form::checkbox($fv['name'], $fv['default'], $fv['checked']) !!}
                                                         @elseif(!strcmp($fv['type'], "radio"))
                                                             {!! Form::radio($fv['name'], $fv['default'], $fv['checked'],$fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "date"))

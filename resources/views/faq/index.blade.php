@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Policies</h3>
+                    <h3 class="fw-bold mb-3">FAQ</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -30,8 +30,8 @@
                 <div class="card" >
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Policies</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Policies </a>
+                            <h4 class="card-title">FAQ</h4>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New FAQ </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -94,9 +94,9 @@
                                 </table>
                             </div>
 
-                            <div class="text-center">
+                            {{-- <div class="text-center">
                                 {!! ${$multipostvar}->render() !!}
-                            </div>
+                            </div> --}}
                         </h5>
                     </div>
                 </div>

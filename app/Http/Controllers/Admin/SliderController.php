@@ -26,10 +26,10 @@ class SliderController extends Controller
         'publish' => 'sliders.publish',
         'unpublish' => 'sliders.unpublish'
     );
-    private $view = array('create' => 'admin.sliders.create',
-        'edit' => 'admin.sliders.edit',
-        'index' => 'admin.sliders.index',
-        'show' => 'admin.sliders.show');
+    private $view = array('create' => 'sliders.create',
+        'edit' => 'sliders.edit',
+        'index' => 'sliders.index',
+        'show' => 'sliders.show');
 
     private $indexvariables = array(
         'title' => 'ALL SLIDERS',
@@ -71,8 +71,8 @@ class SliderController extends Controller
     private $formfields = array(
 
         'slider_image'=> array('name'  =>  'slider_image',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-6',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
             'label' => 'Slider Image',
             'field_icon' => 'glyphicon glyphicon-file',
             'type'  =>  'file',
@@ -84,8 +84,8 @@ class SliderController extends Controller
         ),
 
         'slider_heading' => array('name'  =>  'slider_heading',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Slider Heading',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
@@ -98,8 +98,8 @@ class SliderController extends Controller
         ),
 
         'slider_details' => array('name'  =>  'slider_details',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Slider Details',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
@@ -113,8 +113,8 @@ class SliderController extends Controller
 
 
         'is_published'=> array('name'  =>  'is_published',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => ' Is Published ?',
             'field_icon' => 'glyphicon glyphicon-saved',
             'type'  =>  'select',

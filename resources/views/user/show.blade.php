@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title','Show Item')
+{{-- @section('title','Show Item') --}}
 
 @section('content')
 <div class="container">
     <div class="row">
-        @include('partials.sidebar')
+        {{-- @include('partials.sidebar') --}}
 		    <div class="row col-lg-9">
 		    	<div class="col-md-8">
                     <div class="card">

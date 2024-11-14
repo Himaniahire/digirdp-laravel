@@ -29,6 +29,30 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'sidebar' => [
+                  ['label'=>'Dashboard','route'=>'dashboard.index'],
+                  ['label'=>'About','route'=>'about.index'],
+                  ['label'=>'Configuration','route'=>'configuration.index'],
+                  ['label'=>'User','route'=>'user.index'],
+                  ['label'=>'Policies','route'=>'policies.index'],
+                  ['label'=>'Sliders','route'=>'sliders.index'],
+                  ['label'=>'Testimonials','route'=>'testimonials.index'],
+                  ['label'=>'FAQ','route'=>'faq.index'],
+                  ['label'=>'Offer','route'=>'offer.index'],
+                  ['label'=>'Windows RDP','route'=>'rdp.index'],
+                  ['label'=>'Windows RDP Plan','route'=>'rdpplan.index'],
+                  ['label'=>'Web Hosting','route'=>'hosting.index'],
+                  ['label'=>'RDP By Location','route'=>'rdplocation.index'],
+                  ['label'=>'RDP By Location Plan','route'=>'rdplocationplan.index'],
+                  ['label'=>'Web Hosting Plan','route'=>'hostingplan.index'],
+                  ['label'=>'CLOUD VPS','route'=>'vps.index'],
+                  ['label'=>'CLOUD VPS PLAN','route'=>'vpsplan.index'],
+                  ['label'=>'Dedicated Server','route'=>'dedicated.index'],
+                  ['label'=>'Dedicated Server Plans','route'=>'dedicatedplan.index'],
+                  ['label'=>'Categories','route'=>'category.index'],
+                  ['label'=>'Blog','route'=>'blogs.index'],
+                  ['label'=>'Location','route'=>'location.index'],
+                 ],
 
     /*
     |--------------------------------------------------------------------------

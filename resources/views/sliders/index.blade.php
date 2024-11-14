@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Policies</h3>
+                    <h3 class="fw-bold mb-3">Slider</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -21,7 +21,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">List</a>
+                          <a href="#">Table</a>
                         </li>
                     </ul>
             </div>
@@ -30,8 +30,8 @@
                 <div class="card" >
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Policies</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Policies </a>
+                            <h4 class="card-title">Sliders</h4>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Sliders </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -75,7 +75,11 @@
                                                         <td>{{ substr($notice->$field,0,20) }}{{ strlen($notice->$field) > 20 ? "..." : ""}}</td>
                                                     @endif
                                                 @endforeach
+
                                                 <td class="actions">
+                                                    {{-- {!! Form::open(['route' => [$route['destroy'], $notice->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
+                                                        <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> </button>
+                                                    {!! Form::close() !!} --}}
                                                     <a href="{{ route($route['show'], $notice->id)}}">
                                                         <button class="btn btn-sm btn-primary">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
@@ -86,6 +90,16 @@
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
+
+                                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+
+                                                    <form id="delete-form-{{ $notice->id }}" action="{{ route($route['destroy'], $notice->id) }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
+
                                                 </td>
                                             </tr>
                                         @endforeach

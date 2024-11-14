@@ -26,10 +26,10 @@ class FAQController extends Controller
         'publish' => 'faq.publish',
         'unpublish' => 'faq.unpublish'
     );
-    private $view = array('create' => 'admin.faq.create',
-        'edit' => 'admin.faq.edit',
-        'index' => 'admin.faq.index',
-        'show' => 'admin.faq.show');
+    private $view = array('create' => 'faq.create',
+        'edit' => 'faq.edit',
+        'index' => 'faq.index',
+        'show' => 'faq.show');
 
     private $indexvariables = array(
         'title' => 'ALL FAQ',
@@ -68,8 +68,8 @@ class FAQController extends Controller
 
 
         'question' => array('name'  =>  'question',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'FAQ Question',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
@@ -82,8 +82,8 @@ class FAQController extends Controller
         ),
 
         'answer' => array('name'  =>  'answer',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'FAQ Answer',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'textarea',
@@ -96,8 +96,8 @@ class FAQController extends Controller
         ),
 
         'category_id' => array('name'  =>  'category_id',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-8',
             'label' => 'Select Category',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'select',
@@ -154,9 +154,9 @@ class FAQController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->join('faq_category', 'f_a_q_s.category_id', '=', 'faq_category.category_id')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->join('faq_category', 'f_a_q_s.category_id', '=', 'faq_category.category_id')->get();
         $fields = $this->indexfields;
-        
+
         return view($this->view['index'])->with($this->multipostvar, $posts)
             ->with('fields', $fields)
             ->with('multipostvar', $this->multipostvar)
@@ -271,7 +271,7 @@ class FAQController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
     public function edit($id)
     {

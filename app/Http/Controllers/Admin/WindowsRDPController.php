@@ -28,10 +28,10 @@ class WindowsRDPController extends Controller
         'unpublish' => 'rdp.unpublish',
         'duplicate' => 'rdp.duplicate'
     );
-    private $view = array('create' => 'admin.rdp.create',
-        'edit' => 'admin.rdp.edit',
-        'index' => 'admin.rdp.index',
-        'show' => 'admin.rdp.show');
+    private $view = array('create' => 'rdp.create',
+        'edit' => 'rdp.edit',
+        'index' => 'rdp.index',
+        'show' => 'rdp.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS RDP',

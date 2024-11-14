@@ -1,4 +1,22 @@
 <body>
+
+    @php
+    $sidebarItem = Config::get('app.sidebar',[]);
+    $sidemenu = [];
+  @endphp
+
+  @php
+      $permission_array = [];
+      $permission = Auth::user()->permission;
+      $permission_array = ($permission && $permission != 'null' )? json_decode($permission) : [];
+
+      foreach($sidebarItem as $permi):
+          if(in_array($permi['route'],$permission_array)){
+            $sidemenu[] = $permi;
+          }
+      endforeach;
+
+  @endphp
     <div class="wrapper">
         <!-- Sidebar -->
         <div class="sidebar" data-background-color="dark">
@@ -189,7 +207,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="" href="{{route('category.index')}}">
+                            <a data-bs-toggle="" href="{{route('blogs.index')}}">
                                 <i class="fas fa-layer-group"></i>
                                 <p>Blogs</p>
                                 <span class="caret"></span>
