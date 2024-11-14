@@ -40,4 +40,9 @@
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('assets/css/demo.css')}}" />
+
+    {{-- CKEditor5 CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/ckeditor5.css')}}" />
+    <script src="{{ asset('assets/js/core/jquery-3.7.1.min.js')}}"></script>
+
   </head>
