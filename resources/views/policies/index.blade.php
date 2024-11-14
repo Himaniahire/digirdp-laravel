@@ -28,12 +28,18 @@
             <div class="row">
                 <div class="col-md-12">
                 <div class="card" >
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Policies</h4>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Policies </a>
+                        </div>
+                    </div>
                     <!-- Content goes here -->
                     <div class="card-body" >
                         <h5>
                             <div class="table-responsive">
-                                <a  href="{{ route($route['create']) }}" class="btn btn-primary float-end" > <i class=""></i>New Policies</a>
-                                <table class="table">
+
+                                <table id="basic-datatables" class="display table table-striped table-hover">
                                         <thead>
                                             <tr>
                                                 @foreach($fields as $field => $fv)
@@ -42,6 +48,14 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
+                                        <tfoot>
+                                            <tr>
+                                                @foreach($fields as $field => $fv)
+                                                    <th>{{ucwords($fv['label'])}}</th>
+                                                @endforeach
+                                                <th>Actions</th>
+                                            </tr>
+                                        </tfoot>
                                     <tbody>
                                         @foreach (${$multipostvar} as $notice)
                                             <tr>
