@@ -32,7 +32,7 @@
           <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
-                    <h4 class="card-title">Basic</h4>
+                    <h4 class="card-title">User</h4>
                     <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New User </a>
                 </div>
             </div>
@@ -84,11 +84,17 @@
                                     </button>
                                 </a>
                                 <a href="{{ route($route['edit'], $notice->id) }}">
-                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger"
-                                        data-original-title="Remove">
-                                        <i class="fa fa-times"></i>
+                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary"
+                                        data-original-title="Edit">
+                                       <i class="fa fa-edit"></i>
                                     </button>
                                 </a>
+                                {!! Form::open(['route' => [$route['destroy'], $notice->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
+                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger"
+                                        data-original-title="Remove">
+                                       <i class="fa fa-times"></i>
+                                    </button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach

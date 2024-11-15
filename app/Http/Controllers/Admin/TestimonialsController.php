@@ -23,10 +23,10 @@ class TestimonialsController extends Controller
         'update' => 'testimonials.update',
         'destroy' => 'testimonials.destroy',
     );
-    private $view = array('create' => 'admin.testimonials.create',
-        'edit' => 'admin.testimonials.edit',
-        'index' => 'admin.testimonials.index',
-        'show' => 'admin.testimonials.show');
+    private $view = array('create' => 'testimonials.create',
+        'edit' => 'testimonials.edit',
+        'index' => 'testimonials.index',
+        'show' => 'testimonials.show');
 
     private $indexvariables = array(
         'title' => 'ALL Testimonials',
@@ -115,8 +115,6 @@ class TestimonialsController extends Controller
         'name'  => array('label' => 'Name' ),
         'testimonials'  => array('label' => 'Testimonials' ),
         'image'  => array('label' => 'Image' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
     );
 
 

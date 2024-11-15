@@ -1,21 +1,43 @@
 @extends('layouts.app')
 
-{{-- @section('title','Show Item') --}}
+@section('content-page')
 
 <div class="container">
-    <div class="row">
-        {{-- @include('partials.sidebar') --}}
-		    <div class="row col-lg-9">
-		    	<div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
-                        </div>
-                        <div class="card-body" >
+    <div class="page-inner">
+      <div class="page-header">
+        <h3 class="fw-bold mb-3">Testimonial</h3>
+        <ul class="breadcrumbs mb-3">
+          <li class="nav-home">
+            <a href="/">
+              <i class="icon-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="/">Dashboard</a>
+          </li>
+          <li class="separator">
+            <i class="icon-arrow-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Detail</a>
+          </li>
+        </ul>
+      </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Testimonial Detail</div>
+                    </div>
+
+                    <div class="card-body">
                             <table class="table table-hover table-bordered" >
                                 <tbody>
                                     <tr>
-                                        <th>Sl. No.</th>
+                                        <th>Sr. No.</th>
                                         <th>Table Attributes</th>
                                         <th colspan="2">Table Values</th>
                                     </tr>
@@ -24,9 +46,10 @@
                                         <tr>
                                             <td>{{$loop->index + 1}}</td>
                                             <td>{{ucwords($fv['label'])}}</td>
-                                            @if(strpos($field,"image"))
+                                            @if(strpos($field,"file"))
 
-                                                <td><img src="{{url(${$singlepostvar}->$field)}}" width="200" height="150"></td>
+                                                <td><img src="{{url(${$singlepostvar}->$field)}}" width="200" height="200">
+                                                </td>
 
                                             @elseif(strpos($field,"file"))
                                                 <td><a href="{{url(${$singlepostvar}->$field)}}">DOWNLOAD FILE</a></td>
@@ -51,13 +74,7 @@
 
                                         </tr>
                                     @endforeach
-                                    @if($feature_image)
-                                        <tr>
-                                            <td>6</td>
-                                            <td>Profile</td>
-                                            <td><a href="{{ asset($feature_image) }}" target="_blank"><img src="{{ asset($feature_image) }}" style="width:10%"></a></td>
-                                        </tr>
-                                    @endif
+
                                 </tbody>
                             </table>
 
