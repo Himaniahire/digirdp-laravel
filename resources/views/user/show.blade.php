@@ -1,12 +1,35 @@
 @extends('layouts.app')
 
 {{-- @section('title','Show Item') --}}
+@section('content-page')
 
 <div class="container">
-    <div class="row">
-        {{-- @include('partials.sidebar') --}}
-		    <div class="row col-lg-9">
-		    	<div class="col-md-8">
+    <div class="page-inner">
+        <div class="d-flex">
+                <h3 class="fw-bold mb-3">VPS</h3>
+                <ul class="breadcrumbs mb-3">
+                    <li class="nav-home">
+                      <a href="#">
+                        <i class="icon-home"></i>
+                      </a>
+                    </li>
+                    <li class="separator">
+                      <i class="icon-arrow-right"></i>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#">DashBoard</a>
+                    </li>
+                    <li class="separator">
+                      <i class="icon-arrow-right"></i>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#">Detail</a>
+                    </li>
+                </ul>
+        </div>
+
+		    <div class="row">
+		    	<div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
