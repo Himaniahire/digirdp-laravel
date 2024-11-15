@@ -16,13 +16,13 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">Dashboard</a>
+            <a href="{{ route('about.index')}}">About</a>
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">Edit</a>
+            <a href="{{ route('about.index')}}">Edit</a>
           </li>
         </ul>
       </div>
