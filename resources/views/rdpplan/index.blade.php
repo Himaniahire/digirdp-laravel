@@ -76,6 +76,19 @@
                                                     @endif
                                                 @endforeach
                                                 <td class="actions">
+                                                    @if(!$notice->is_published)
+				                                <a href="{{ route($route['publish'], $notice->id)}}">
+				                                    <button class="btn btn-sm btn-primary">
+				                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+				                                    </button>
+				                                </a>
+				                                @else
+				                                <a href="{{ route($route['unpublish'], $notice->id)}}">
+				                                    <button class="btn btn-sm btn-danger">
+				                                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+				                                    </button>
+				                                </a>
+				                                @endif
                                                     <a href="{{ route($route['show'], $notice->id)}}">
                                                         <button class="btn btn-sm btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>

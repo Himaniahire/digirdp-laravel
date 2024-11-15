@@ -33,7 +33,7 @@ class BlogController extends Controller
 
     public function blog_delete(Request $request){
         Post::destroy($request->id);
-        return redirect( route('blogs.index') );
+        return redirect( route('blog.index') );
     }
 
       public function processFile( $request, $update = 0)
