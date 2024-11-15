@@ -78,11 +78,9 @@
 
                 {!! Form::close() !!}
             </div>
-
             <div class="card-action">
                 {!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
                 <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
-              </div>
             </div>
           </div>
         </div>

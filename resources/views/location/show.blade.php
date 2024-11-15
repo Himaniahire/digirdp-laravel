@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Features</h3>
+                    <h3 class="fw-bold mb-3">Location</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -30,62 +30,54 @@
                 <div class="card" >
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Features</h4>
-                            <a href="{{ route('features.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel </a>
+                            < <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
+                            <a href="{{ route('location.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
                     <div class="card-body" >
-                        <h5>
-                            <div class="table-responsive">
+                        <table class="table" >
+                            <tbody>
+                            <tr>
+                                <th>Sl. No.</th>
+                                <th>Table Attributes</th>
+                                <th colspan="2">Table Values</th>
+                            </tr>
+                            @foreach($fields as $field => $fv)
+                                {{-- STRCMP RETURNS 0 WHEN EQUAL --}}
+                                <tr>
+                                    <td>{{$loop->index + 1}}</td>
+                                    <td>{{ucwords($fv['label'])}}</td>
+                                    @if(strpos($field,"image"))
 
-                                <table id="basic-datatables" class="table">
-                                        <tbody>
-                                            <tr>
-                                                <th>Sl. No.</th>
-                                                <th>Table Attributes</th>
-                                                <th colspan="2">Table Values</th>
-                                            </tr>
-                                                {{-- STRCMP RETURNS 0 WHEN EQUAL --}}
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Feature ID</td>
-                                                    <td>{{ $features_card->card_id }}</td>
-                                                </tr>
+                                        <td><img src="{{url(${$singlepostvar}->$field)}}" width="200" height="150"></td>
 
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Feature Title</td>
-                                                    <td>{{ $features_card->card_title }}</td>
-                                                </tr>
+                                    @elseif(strpos($field,"file"))
+                                        <td><a href="{{url(${$singlepostvar}->$field)}}">DOWNLOAD FILE</a></td>
 
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Feature Content</td>
-                                                    <td>{{ $features_card->card_content }}</td>
-                                                </tr>
 
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>Feature Image</td>
-                                                    <td><img src="/{{ $features_card->card_image }}" style="height: 5em;"></td>
-                                                </tr>
+                                    @elseif(!strcmp($field,"id"))
+                                        <td>{{ ${$singlepostvar}->$field }}</td>
 
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>Category</td>
-                                                    <td>{{ $features_card->category_name }}</td>
-                                                </tr>
+                                    @elseif(!strcmp($field,"created_at"))
+                                        <td>{{ date('d M Y, H:i:s', strtotime(${$singlepostvar}->$field) )}}</td>
 
-                                            </tbody>
+                                    @elseif(!strcmp($field,"updated_at"))
+                                        <td>{{ date('d M Y, H:i:s', strtotime(${$singlepostvar}->$field) )}}</td>
 
-                                </table>
-                            </div>
+                                    @elseif(!strcmp($field,"is_published"))
 
-                            {{-- <div class="text-center">
-                                {{ $features_card->links() }}
-                            </div> --}}
-                        </h5>
+
+                                    @else
+                                        <td>{{ ${$singlepostvar}->$field }}</td>
+
+                                    @endif
+
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

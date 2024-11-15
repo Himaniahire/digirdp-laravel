@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Features</h3>
+                    <h3 class="fw-bold mb-3">Location</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -38,63 +38,55 @@
                     <div class="card-body" >
                         <h5>
                             <div class="table-responsive">
-
-                                <table id="basic-datatables" class="display table table-striped table-hover">
-                                    <thead>
-				                        <tr>
-					                        <th>#</th>
-											<th>Feature</th>
-											<th>Category</th>
-											<th>Details</th>
-				                            <th>Actions</th>
-				                        </tr>
-				                    </thead>
-                                        <tfoot>
+                                <table class="table">
+                                        <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Feature</th>
-                                                <th>Category</th>
-                                                <th>Details</th>
+                                                <th>SN</th>
+                                                <th>Title</th>
+                                                <th>Status</th>
+                                                <th>Post By</th>
                                                 <th>Actions</th>
                                             </tr>
-                                        </tfoot>
+                                        </thead>
                                     <tbody>
-                                        @foreach ($features_card as $fc)
-				                        <tr>
-				                        	<td>{{ $fc->card_id }}</td>
-				                        	<td>{{ $fc->card_title }}</td>
-				                        	<td>{{ $fc->category_name }}</td>
-											<td>{{ substr($fc->card_content,0,20) }}{{ strlen($fc->card_content) > 20 ? "..." : ""}}</td>
-				                            <td class="actions">
-				                                <a href="{{ route('features.show', $fc->card_id)}}">
-				                                    <button class="btn btn-sm btn-primary">
-				                                        <i class="fas fa-eye" aria-hidden="true"></i>
-				                                    </button>
-				                                </a>
-				                                <a href="{{ route('features.edit', $fc->card_id) }}">
-				                                    <button class="btn btn-sm btn-warning">
-				                                        <i class="fas fa-edit"></i>
-				                                    </button>
-				                                </a>
-                                                <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $fc->card_id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
+                                        @php
+                                            $count = 0;
+                                        @endphp
+                                        @foreach($category as $bl)
+                                            <tr>
+                                                <td>{{ ++$count }}</td>
+                                                <td>{{ $bl->name ?? '' }}</td>
+                                                <td>
+                                                    @if($bl->status==1)
+                                                        <a class="badge badge-success" href="{{ route('category.status.change') }}?id={{ $bl->id }}&status=2">Active</a>
+                                                    @else
+                                                        <a class="badge badge-danger" href="{{ route('category.status.change') }}?id={{ $bl->id }}&status=1">Inactive</a>
+                                                    @endif
 
-                                                <form id="delete-form-{{ $fc->card_id }}" action="{{ route('features.destroy', $fc->card_id) }}" method="POST" style="display: none;">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                </form>
-				                            </td>
-				                        </tr>
-				                    @endforeach
+                                                </td>
+                                                <td>{{ $bl->user->name ?? '' }}</td>
+                                                <td class="actions">
+                                                    <!-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
+                                                        <button class="btn btn-sm btn-primary">
+                                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                                        </button>
+                                                    </a> -->
+                                                    <a href="{{ route('location.edit',['location'=>$bl->id]) }}">
+                                                        <button class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
 
                                 </table>
                             </div>
 
-                            {{-- <div class="text-center">
-                                {{ $features_card->links() }}
-                            </div> --}}
+                            <div class="text-center">
+
+                            </div>
                         </h5>
                     </div>
                 </div>

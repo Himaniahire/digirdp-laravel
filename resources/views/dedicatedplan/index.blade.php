@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Dedicated Sever</h3>
+                    <h3 class="fw-bold mb-3">Dedicated Sever Plan</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">
@@ -30,8 +30,8 @@
                 <div class="card" >
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Dedicated Server</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New Dedicated server</a>
+                            <h4 class="card-title">Dedicated Server Plan</h4>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New Dedicated server Plan</a>
                         </div>
                     </div>
                     <!-- Content goes here -->

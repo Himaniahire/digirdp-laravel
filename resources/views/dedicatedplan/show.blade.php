@@ -4,7 +4,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="d-flex">
-                    <h3 class="fw-bold mb-3">Dedicated Server</h3>
+                    <h3 class="fw-bold mb-3">Dedicated Server Plan</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
                           <a href="#">

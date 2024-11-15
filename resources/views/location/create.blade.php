@@ -21,7 +21,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Table</a>
+                          <a href="#">Add</a>
                         </li>
                     </ul>
             </div>
@@ -31,7 +31,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title"> Location</h4>
-                            <a href="{{ route('features.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel</a>
+                            <a href="{{ route('location.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel</a>
                         </div>
                     </div>
                     <!-- Content goes here -->
