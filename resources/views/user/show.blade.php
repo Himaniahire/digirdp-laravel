@@ -3,6 +3,8 @@
 {{-- @section('title','Show Item') --}}
 @section('content-page')
 
+@section('content-page')
+
 <div class="container">
     <div class="page-inner">
         <div class="d-flex">

@@ -7,21 +7,21 @@
                     <h3 class="fw-bold mb-3">Policies</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
-                            <i class="icon-home"></i>
-                          </a>
+                            <a href="/">
+                                <i class="icon-home"></i>
+                            </a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('policies.index')}}">Policies</a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Detail</a>
+                            <a href="#">Details</a>
                         </li>
                     </ul>
             </div>
@@ -77,10 +77,7 @@
 
                                 </tbody>
                             </table>
-<<<<<<< HEAD
 
-=======
->>>>>>> 9c5150ebd3c9552bfa82e73d6dfecee9d2a7baec
                         </h4>
                     </div>
                 </div>

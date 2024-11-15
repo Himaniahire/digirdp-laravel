@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Slider</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,13 +15,13 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                          <a href="{{ route('sliders.index')}}">Slider</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Table</a>
+                          <a href="{{ route('sliders.index')}}">List</a>
                         </li>
                     </ul>
             </div>
