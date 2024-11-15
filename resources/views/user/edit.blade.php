@@ -153,9 +153,11 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <div class="" >
                                         <div class="input-group">
                                             <label class=" control-label" for="deleteoption"><input class=" border-input" id="deleteoption"  {{ (${$singlepostvar}->deletep==1) ? 'checked' :'' }} name="delete"  value="1" type="checkbox"> Enable Delete Option </label>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-action">
@@ -165,7 +167,7 @@
                         </div>
                         {!! Form::close() !!}
                     </div>
-
+                    
                 </div>
             </div>
         </div>
