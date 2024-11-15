@@ -41,13 +41,13 @@ class UserAdminController extends Controller
     );
 
     private $showvariables = array(
-        'title' => 'USER DETAILS',
+        'title' => 'User DETAILS',
         'seeall' => 'SEE ALL USER',
     );
 
-    private $saveSuccess    = 'The USER was successfully saved.';
-    private $deletionSuccess = 'USER Deleted Successfully';
-    private $updationSuccess = 'USER Updated Successfully';
+    private $saveSuccess    = 'The User was successfully saved.';
+    private $deletionSuccess = 'User Deleted Successfully';
+    private $updationSuccess = 'User Updated Successfully';
     private $singlepostvar  = "USER";
     private $multipostvar   = "USER";
     private $indexpagination = 10;
@@ -66,29 +66,29 @@ class UserAdminController extends Controller
    //  private $uploadPath     = "uploads/blogs";
    private $formfields_edit = array(
         'name' => array('name'  =>  'name',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
-            'label' => 'USER Name',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
+            'label' => 'User Name',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
             'default' => null,
             'extras'=> array('class' => 'form-control border-input',
                 'id' => 'question',
-                'placeholder' => 'Enter USER Name here',
+                'placeholder' => 'Enter user Name here',
                 'required' => ''
             )
         ),
 
         'email' => array('name'  =>  'email',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
-            'label' => 'USER email',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
+            'label' => 'User email',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
             'default' => null,
             'extras'=> array('class' => 'form-control border-input',
                 'id' => 'answer',
-                'placeholder' => 'Enter USER email here',
+                'placeholder' => 'Enter user email here',
                 'required' => ''
             )
         ),
@@ -96,42 +96,42 @@ class UserAdminController extends Controller
     );
     private $formfields = array(
         'name' => array('name'  =>  'name',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
-            'label' => 'USER Name',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
+            'label' => 'User Name',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
             'default' => null,
             'extras'=> array('class' => 'form-control border-input',
                 'id' => 'question',
-                'placeholder' => 'Enter USER Name here',
+                'placeholder' => 'Enter user Name here',
                 'required' => ''
             )
         ),
 
         'email' => array('name'  =>  'email',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
-            'label' => 'USER email',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
+            'label' => 'User Email',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
             'default' => null,
             'extras'=> array('class' => 'form-control border-input',
                 'id' => 'answer',
-                'placeholder' => 'Enter USER email here',
+                'placeholder' => 'Enter user email here',
                 'required' => ''
             )
         ),
         'password' => array('name'  =>  'password',
-            'label_length' => 'col-lg-4',
-            'field_length' => 'col-lg-8',
-            'label' => 'USER Password',
+            // 'label_length' => 'col-lg-4',
+            // 'field_length' => 'col-lg-6',
+            'label' => 'User Password',
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'text',
             'default' => null,
             'extras'=> array('class' => 'form-control border-input',
                 'id' => 'answer',
-                'placeholder' => 'Enter USER PASSWORD here',
+                'placeholder' => 'Enter user password here',
                 'required' => ''
             )
         ),
@@ -147,7 +147,7 @@ class UserAdminController extends Controller
 
 
     private $showfields = array(
-        'id' => array('label' => 'USER ID'),
+        'id' => array('label' => 'User ID'),
         'name'  => array('label' => 'Name' ),
         'email'  => array('label' => 'Email' ),
     );

@@ -23,10 +23,10 @@ class Policies extends Controller
         'update' => 'policies.update',
         'destroy' => 'policies.destroy',
     );
-    private $view = array('create' => 'admin.policies.create',
-        'edit' => 'admin.policies.edit',
-        'index' => 'admin.policies.index',
-        'show' => 'admin.policies.show');
+    private $view = array('create' => 'policies.create',
+        'edit' => 'policies.edit',
+        'index' => 'policies.index',
+        'show' => 'policies.show');
 
     private $indexvariables = array(
         'title' => 'ALL POLICIES',
@@ -107,7 +107,8 @@ class Policies extends Controller
                 'id' => 'header',
                 'placeholder' => 'Enter Eligibility Here',
                 'required' => '',
-                'rows' => 30
+                'rows' => 20,
+                'cols' => 80
             )
         ),
         'start_date' => array('name'  =>  'start_date',

@@ -14,7 +14,7 @@ class CategoryController extends Controller
 {
 
     protected $thumb = [270, 225];
-    protected $medium = [550, 360];    
+    protected $medium = [550, 360];
 
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-        return view( 'admin.category.index', ['title' => 'All categories','category'=>$category] );
+        return view( 'category.index', ['title' => 'All categories','category'=>$category] );
     }
 
     /**
@@ -34,7 +34,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view( 'admin.category.create', ['title' => 'Create category'] );
+        return view( 'category.create', ['title' => 'Create category'] );
     }
 
     public function status_update(Request $request)
@@ -170,7 +170,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        
+
         if( Category::where('id', $id)->delete() )
             return redirect()->back()->with('cat_msg', 'Category deleted successfully!');
 

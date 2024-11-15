@@ -9,7 +9,7 @@
     />
     <link
       rel="icon"
-      href="{{ asset('assets/img/kaiadmin/favicon.ico')}}"
+      href="{{ asset('assets/img/digirpd-logo/bgwithoutbg.ico')}}"
       type="image/x-icon"
     />
 
@@ -25,7 +25,7 @@
             "Font Awesome 5 Brands",
             "simple-line-icons",
           ],
-          urls: ["assets/css/fonts.min.css"],
+          urls: ["http://127.0.0.1:8000/assets/css/fonts.min.css"],
         },
         active: function () {
           sessionStorage.fonts = true;
