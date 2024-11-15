@@ -77,10 +77,7 @@
 
                                 </tbody>
                             </table>
-<<<<<<< HEAD
 
-=======
->>>>>>> 9c5150ebd3c9552bfa82e73d6dfecee9d2a7baec
                         </h4>
                     </div>
                 </div>
