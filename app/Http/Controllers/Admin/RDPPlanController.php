@@ -28,10 +28,10 @@ class RDPPlanController extends Controller
         'unpublish' => 'rdpplan.unpublish',
         'duplicate' => 'rdpplan.duplicate'
     );
-    private $view = array('create' => 'admin.rdpplan.create',
-        'edit' => 'admin.rdpplan.edit',
-        'index' => 'admin.rdpplan.index',
-        'show' => 'admin.rdpplan.show');
+    private $view = array('create' => 'rdpplan.create',
+        'edit' => 'rdpplan.edit',
+        'index' => 'rdpplan.index',
+        'show' => 'rdpplan.show');
 
     private $indexvariables = array(
         'title' => 'ALL RDP PLAN',
@@ -491,7 +491,7 @@ class RDPPlanController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
 
 //        foreach($posts as $post)
 //        {

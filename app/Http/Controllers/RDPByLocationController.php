@@ -247,7 +247,7 @@ class RDPByLocationController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -342,12 +342,13 @@ class RDPByLocationController extends Controller
         $fields = $this->showfields;
         $post = $this->modelname::find($id);
         $category = RDPByLocationPlan::where('rdp_id', $id)->paginate(5);
-
+        $plantitle = $post->name;
         return view($this->view['show'])->with('category', $category)
             ->with('fields', $fields)
             ->with('route', $this->route)
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
+            ->with('plantitle', $plantitle)
             ->with('showvar', $this->showvariables)
             ->with('uploadPath',url($this->uploadPath));
     }

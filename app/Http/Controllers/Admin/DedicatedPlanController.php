@@ -28,10 +28,10 @@ class DedicatedPlanController extends Controller
         'unpublish' => 'dedicatedplan.unpublish',
         'duplicate' => 'dedicatedplan.duplicate'
     );
-    private $view = array('create' => 'admin.dedicatedplan.create',
-        'edit' => 'admin.dedicatedplan.edit',
-        'index' => 'admin.dedicatedplan.index',
-        'show' => 'admin.dedicatedplan.show');
+    private $view = array('create' => 'dedicatedplan.create',
+        'edit' => 'dedicatedplan.edit',
+        'index' => 'dedicatedplan.index',
+        'show' => 'dedicatedplan.show');
 
     private $indexvariables = array(
         'title' => 'ALL DEDICATED PLAN',
@@ -447,7 +447,7 @@ class DedicatedPlanController extends Controller
         'id' => array('label' => '#'),
 //        'dedicated_id'  => array('label' => 'Belongs to Server'),
         'name'  => array('label' => 'Name' ),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -491,7 +491,7 @@ class DedicatedPlanController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
 
 //        foreach($posts as $post)
 //        {
@@ -603,8 +603,8 @@ class DedicatedPlanController extends Controller
             if(!in_array($fieldname, $this->imageinputname))
                 $post->$fieldname = $request->$fieldname;
         }
-        
-       
+
+
 
         $post->save();
 
@@ -720,7 +720,7 @@ class DedicatedPlanController extends Controller
             if(!in_array($fieldname, $this->imageinputname))
                 $post->$fieldname = $request->$fieldname;
         }
-         $post->locationid = $request->locationid; 
+         $post->locationid = $request->locationid;
         $post->save();
 
         Session::flash('success', $this->updationSuccess);
@@ -769,7 +769,7 @@ class DedicatedPlanController extends Controller
         $post->save();
         return redirect()->back();
     }
-    
+
     /**
      * Duplicate the specified resource in storage.
      *

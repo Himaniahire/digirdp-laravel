@@ -31,7 +31,7 @@
                     <div class="card-header">
 				        <h4 class="title">Category
 				            <a href="{{ route('category.create') }}" class="btn btn-primary btn-round float-end">
-				            	<i class="fa fa-plus"></i> Add Category
+				            	<i class="fa fa-plus me-1"></i>Add Category
 				            </a>
 
 			            </h4>

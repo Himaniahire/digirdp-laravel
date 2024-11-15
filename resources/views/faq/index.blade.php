@@ -31,7 +31,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">FAQ</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New FAQ </a>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New FAQ </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -86,6 +86,14 @@
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
+                                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+
+                                                    <form id="delete-form-{{ $notice->id }}" action="{{ route($route['destroy'], $notice->id) }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

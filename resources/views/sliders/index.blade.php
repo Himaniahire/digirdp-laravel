@@ -31,7 +31,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Sliders</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Sliders </a>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i> New Sliders </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -108,9 +108,7 @@
                                 </table>
                             </div>
 
-                            <div class="text-center">
-                                {!! ${$multipostvar}->render() !!}
-                            </div>
+
                         </h5>
                     </div>
                 </div>

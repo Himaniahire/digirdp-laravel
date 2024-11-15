@@ -34,7 +34,7 @@
                     <!-- Content goes here -->
                     <div class="card-body" >
                         <h4>
-                            <table id="basic-datatables" class="display table table-striped table-hover">
+                            <table id="basic-datatables" class="table">
                                 <tbody>
                                 <tr>
                                     <th>Sl. No.</th>

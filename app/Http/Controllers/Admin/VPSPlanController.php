@@ -28,10 +28,10 @@ class VPSPlanController extends Controller
         'unpublish' => 'vpsplan.unpublish',
         'duplicate' => 'vpsplan.duplicate'
     );
-    private $view = array('create' => 'admin.vpsplan.create',
-        'edit' => 'admin.vpsplan.edit',
-        'index' => 'admin.vpsplan.index',
-        'show' => 'admin.vpsplan.show');
+    private $view = array('create' => 'vpsplan.create',
+        'edit' => 'vpsplan.edit',
+        'index' => 'vpsplan.index',
+        'show' => 'vpsplan.show');
 
     private $indexvariables = array(
         'title' => 'ALL VPS PLAN',
@@ -447,7 +447,7 @@ class VPSPlanController extends Controller
         'id' => array('label' => '#'),
 //        'vps_id'  => array('label' => 'Belongs to Server'),
         'name'  => array('label' => 'Name' ),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -491,7 +491,7 @@ class VPSPlanController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
 
 //        foreach($posts as $post)
 //        {
@@ -766,7 +766,7 @@ class VPSPlanController extends Controller
         return redirect()->back();
     }
 
-    
+
     /**
      * Duplicate the specified resource in storage.
      *
