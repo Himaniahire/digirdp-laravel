@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('dedicated.index'))}}">Dedicated Server</a>
+                            <a href="{{ route('dedicated.index')}}">Dedicated Server</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>

@@ -207,7 +207,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a data-bs-toggle="" href="{{route('blog.index')}}">
+                            <a data-bs-toggle="" href="{{route('blogs.index')}}">
                                 <i class="fab fa-blogger-b"></i>
                                 <p>Blogs</p>
                                 <span class="caret"></span>

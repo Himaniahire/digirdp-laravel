@@ -15,7 +15,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('category.index'))}}">Category</a>
+                        <a href="{{ route('category.index')}}">Category</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
