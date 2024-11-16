@@ -32,8 +32,8 @@
           <div class="card">
             <div class="card-header">
                 <div class="d-flex align-items-center">
-                    <h4 class="card-title">User</h4>
-                    <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New User </a>
+                    <h4 class="card-title">Basic</h4>
+                    <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New User </a>
                 </div>
             </div>
             <div class="card-body">
@@ -77,24 +77,26 @@
                                 @endif
                             </td>
                             <td class="actions">
-                                <a href="{{ route($route['show'], $notice->id) }}">
-                                    <button type="button" data-bs-toggle="tooltip" title=""
-                                        class="btn btn-link btn-info btn-lg" data-original-title="Show">
-                                       <i class="fas fa-eye"></i>
+                                <a href="{{ route($route['show'], $notice->id)}}">
+                                    <button class="btn btn-sm btn-info">
+                                        <i class="fas fa-eye" aria-hidden="true"></i>
                                     </button>
                                 </a>
                                 <a href="{{ route($route['edit'], $notice->id) }}">
-                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary"
-                                        data-original-title="Edit">
-                                       <i class="fa fa-edit"></i>
+                                    <button class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
                                     </button>
                                 </a>
-                                {!! Form::open(['route' => [$route['destroy'], $notice->id], 'method' =>'DELETE', 'style' => 'margin-top: -15px;']) !!}
-                                    <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger"
-                                        data-original-title="Remove">
-                                       <i class="fa fa-times"></i>
-                                    </button>
-                                {!! Form::close() !!}
+
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+
+                                <form id="delete-form-{{ $notice->id }}" action="{{ route($route['destroy'], $notice->id) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+
                             </td>
                         </tr>
                     @endforeach

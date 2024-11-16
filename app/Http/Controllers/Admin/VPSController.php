@@ -27,10 +27,10 @@ class VPSController extends Controller
         'unpublish' => 'vps.unpublish',
         'duplicate' => 'vps.duplicate'
     );
-    private $view = array('create' => 'admin.vps.create',
-        'edit' => 'admin.vps.edit',
-        'index' => 'admin.vps.index',
-        'show' => 'admin.vps.show');
+    private $view = array('create' => 'vps.create',
+        'edit' => 'vps.edit',
+        'index' => 'vps.index',
+        'show' => 'vps.show');
 
     private $indexvariables = array(
         'title' => 'ALL CLOUD VPS',
@@ -246,7 +246,7 @@ class VPSController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -339,7 +339,7 @@ class VPSController extends Controller
     {
         $fields = $this->showfields;
         $post = $this->modelname::find($id);
-
+        $plantitle = $post->name;
         $category = VPSPlan::where('vps_id', $id)->paginate(5);
 
         return view($this->view['show'])->with('category', $category)
@@ -347,6 +347,7 @@ class VPSController extends Controller
             ->with('route', $this->route)
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
+            ->with('plantitle', $plantitle)
             ->with('showvar', $this->showvariables)
             ->with('uploadPath',url($this->uploadPath));
     }
@@ -395,7 +396,7 @@ class VPSController extends Controller
         }
         $post->show_in_header = $request->show_in_header == 'on' ? 1 : 0;
         $post->show_in_footer = $request->show_in_footer == 'on' ? 1 : 0;
-        
+
         $post->save();
 
         Session::flash('success', $this->updationSuccess);

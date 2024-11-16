@@ -26,10 +26,10 @@ class HostingController extends Controller
         'unpublish' => 'hosting.unpublish',
         'duplicate' => 'hosting.duplicate'
     );
-    private $view = array('create' => 'admin.hosting.create',
-        'edit' => 'admin.hosting.edit',
-        'index' => 'admin.hosting.index',
-        'show' => 'admin.hosting.show');
+    private $view = array('create' => 'hosting.create',
+        'edit' => 'hosting.edit',
+        'index' => 'hosting.index',
+        'show' => 'hosting.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS HOSTING',
@@ -223,8 +223,8 @@ class HostingController extends Controller
         'url_text' => array('label' => 'URL Text'),
         'logo' => array('label' => 'Hosting Logo' ),
         'start_price'  => array('label' => 'Hosting Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );
@@ -247,7 +247,7 @@ class HostingController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -342,13 +342,14 @@ class HostingController extends Controller
         $fields = $this->showfields;
         $post = $this->modelname::find($id);
         $category = HostingPlans::where('hosting_id', $id)->paginate(5);
-
+        $plantitle = $post->name;
         return view($this->view['show'])->with('category', $category)
             ->with('fields', $fields)
             ->with('route', $this->route)
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
             ->with('showvar', $this->showvariables)
+            ->with('plantitle', $plantitle)
             ->with('uploadPath',url($this->uploadPath));
     }
 

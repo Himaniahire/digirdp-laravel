@@ -28,10 +28,10 @@ class WindowsRDPController extends Controller
         'unpublish' => 'rdp.unpublish',
         'duplicate' => 'rdp.duplicate'
     );
-    private $view = array('create' => 'admin.rdp.create',
-        'edit' => 'admin.rdp.edit',
-        'index' => 'admin.rdp.index',
-        'show' => 'admin.rdp.show');
+    private $view = array('create' => 'rdp.create',
+        'edit' => 'rdp.edit',
+        'index' => 'rdp.index',
+        'show' => 'rdp.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS RDP',
@@ -262,7 +262,7 @@ class WindowsRDPController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::join('menu_item_category', 'windows_rdps.menu_item_category_id', '=', 'menu_item_category.menu_item_id')->orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::join('menu_item_category', 'windows_rdps.menu_item_category_id', '=', 'menu_item_category.menu_item_id')->orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -367,6 +367,7 @@ class WindowsRDPController extends Controller
         $fields = $this->showfields;
         $post = $this->modelname::join('menu_item_category', 'windows_rdps.menu_item_category_id', '=', 'menu_item_category.menu_item_id')->find($id);
 
+        $plantitle = $post->name;
         $category = RDPPlan::where('rdp_id', $id)->paginate(5);
 
         return view($this->view['show'])->with('category', $category)
@@ -374,6 +375,7 @@ class WindowsRDPController extends Controller
             ->with('route', $this->route)
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
+            ->with('plantitle', $plantitle)
             ->with('showvar', $this->showvariables)
             ->with('uploadPath',url($this->uploadPath));
     }

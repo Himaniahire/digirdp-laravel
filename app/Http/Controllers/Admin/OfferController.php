@@ -25,10 +25,10 @@ class OfferController extends Controller
         'publish' => 'offer.publish',
         'unpublish' => 'offer.unpublish'
     );
-    private $view = array('create' => 'admin.offer.create',
-        'edit' => 'admin.offer.edit',
-        'index' => 'admin.offer.index',
-        'show' => 'admin.offer.show');
+    private $view = array('create' => 'offer.create',
+        'edit' => 'offer.edit',
+        'index' => 'offer.index',
+        'show' => 'offer.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS OFFER',
@@ -153,8 +153,8 @@ class OfferController extends Controller
         'id' => array('label' => '#'),
         'name'  => array('label' => 'OFFER Name' ),
         'offer_image' => array('label' => 'OFFER Image' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -188,7 +188,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)

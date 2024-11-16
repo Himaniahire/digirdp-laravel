@@ -27,10 +27,10 @@ class HostingPlanController extends Controller
         'unpublish' => 'hostingplan.unpublish',
         'duplicate' => 'hostingplan.duplicate'
     );
-    private $view = array('create' => 'admin.hostingplan.create',
-        'edit' => 'admin.hostingplan.edit',
-        'index' => 'admin.hostingplan.index',
-        'show' => 'admin.hostingplan.show');
+    private $view = array('create' => 'hostingplan.create',
+        'edit' => 'hostingplan.edit',
+        'index' => 'hostingplan.index',
+        'show' => 'hostingplan.show');
 
     private $indexvariables = array(
         'title' => 'ALL Hosting PLAN',
@@ -446,7 +446,7 @@ class HostingPlanController extends Controller
         'id' => array('label' => '#'),
 //        'Hosting_name'  => array('label' => 'Belongs to Server'),
         'name'  => array('label' => 'Name' ),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -490,7 +490,7 @@ class HostingPlanController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
 
 //        foreach($posts as $post)
 //        {

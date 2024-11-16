@@ -27,10 +27,10 @@ class RDPByLocationController extends Controller
         'unpublish' => 'rdplocation.unpublish',
         'duplicate' => 'rdplocation.duplicate'
     );
-    private $view = array('create' => 'admin.rdplocation.create',
-        'edit' => 'admin.rdplocation.edit',
-        'index' => 'admin.rdplocation.index',
-        'show' => 'admin.rdplocation.show');
+    private $view = array('create' => 'rdplocation.create',
+        'edit' => 'rdplocation.edit',
+        'index' => 'rdplocation.index',
+        'show' => 'rdplocation.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS RDP BY LOCATION',
@@ -247,7 +247,7 @@ class RDPByLocationController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -342,12 +342,13 @@ class RDPByLocationController extends Controller
         $fields = $this->showfields;
         $post = $this->modelname::find($id);
         $category = RDPByLocationPlan::where('rdp_id', $id)->paginate(5);
-
+        $plantitle = $post->name;
         return view($this->view['show'])->with('category', $category)
             ->with('fields', $fields)
             ->with('route', $this->route)
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
+            ->with('plantitle', $plantitle)
             ->with('showvar', $this->showvariables)
             ->with('uploadPath',url($this->uploadPath));
     }
@@ -362,7 +363,7 @@ class RDPByLocationController extends Controller
     {
         $fields = $this->formfields;
         $post = $this->modelname::find($id);
-        
+
         $fields['show_in_header']['checked'] = $post->show_in_header;
         $fields['show_in_footer']['checked'] = $post->show_in_footer;
 
@@ -443,7 +444,7 @@ class RDPByLocationController extends Controller
         $post->save();
         return redirect()->route($this->route['index']);
     }
-    
+
     /**
      * Duplicate the specified resource in storage.
      *

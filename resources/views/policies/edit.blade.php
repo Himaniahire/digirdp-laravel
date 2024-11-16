@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">Policies</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,13 +15,13 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('policies.index')}}">Policies</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Policies</a>
+                        <a href="#">Edit</a>
                     </li>
                 </ul>
             </div>
@@ -29,18 +29,20 @@
                     <fieldset>
                         {!! Form::model(${$singlepostvar}, ['route' => [$route['update'], ${$singlepostvar}->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files'=> true]) !!}
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="panel-title"><h3><b>EDIT</b></h3></div>
                                     </div>
                                     <div class="card-body">
+                                        <div class="row">
                                         @foreach($fields as $field => $fv)
+                                         <div class="col-md-6">
                                             <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
-                                                <label class="{{$fv['label_length']}} control-label"
+                                                <label class=" control-label"
                                                        for="NEW_subject">{{$fv['label']}} <sup class="required fs-5 text-danger">*</sup>
                                                 </label>
-                                                <div class="{{$fv['field_length']}}">
+                                                <div class="">
 
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -48,7 +50,7 @@
                                                         @if(!strcmp($fv['type'], "text"))
                                                             {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "textarea"))
-                                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras']) !!}
+                                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor'] )  !!}
                                                         @elseif(!strcmp($fv['type'], "select"))
                                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "checkbox"))
@@ -72,11 +74,19 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                         </div>
                                         @endforeach
-                                        <div class="me-2">
-                                            <a href="{{ url()->previous() }}" class="btn btn-primary btn-block">Cancel</a>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
 
-                                            {!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
+                                                    <a href="{{ url()->previous() }}" class="btn btn-primary btn-block">Cancel</a>
+
+                                                    {!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
+                                                </div>
+                                            </div>
+                                        </div>
                                         </div>
 
                                     </div>

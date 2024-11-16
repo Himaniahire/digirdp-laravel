@@ -27,10 +27,10 @@ class DedicatedController extends Controller
         'unpublish' => 'dedicated.unpublish',
         'duplicate' => 'dedicated.duplicate'
     );
-    private $view = array('create' => 'admin.dedicated.create',
-        'edit' => 'admin.dedicated.edit',
-        'index' => 'admin.dedicated.index',
-        'show' => 'admin.dedicated.show');
+    private $view = array('create' => 'dedicated.create',
+        'edit' => 'dedicated.edit',
+        'index' => 'dedicated.index',
+        'show' => 'dedicated.show');
 
     private $indexvariables = array(
         'title' => 'ALL WINDOWS Dedicated',
@@ -224,8 +224,8 @@ class DedicatedController extends Controller
         'logo' => array('label' => 'Dedicated RDP Logo' ),
         'url_text' => array('label' => 'URL Text'),
         'start_price'  => array('label' => 'Dedicated RDP Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );
@@ -248,7 +248,7 @@ class DedicatedController extends Controller
      */
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
 
         return view($this->view['index'])->with($this->multipostvar, $posts)
@@ -342,7 +342,7 @@ class DedicatedController extends Controller
     {
         $fields = $this->showfields;
         $post = $this->modelname::find($id);
-
+        $plantitle = $post->name;
         $category = DedicatedPlan::where('dedicated_id', $id)->paginate(5);
         return view($this->view['show'])->with('category', $category)
             ->with('fields', $fields)
@@ -350,6 +350,7 @@ class DedicatedController extends Controller
             ->with($this->singlepostvar, $post)
             ->with('singlepostvar', $this->singlepostvar)
             ->with('showvar', $this->showvariables)
+            ->with('plantitle', $plantitle)
             ->with('uploadPath',url($this->uploadPath));
     }
 

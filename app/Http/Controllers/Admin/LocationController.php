@@ -14,7 +14,7 @@ class LocationController extends Controller
 {
 
     protected $thumb = [270, 225];
-    protected $medium = [550, 360];    
+    protected $medium = [550, 360];
 
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class LocationController extends Controller
     public function index()
     {
         $category = Location::all();
-        return view( 'admin.location.index', ['title' => 'All Locations','category'=>$category] );
+        return view( 'location.index', ['title' => 'All Locations','category'=>$category] );
     }
 
     /**
@@ -34,7 +34,7 @@ class LocationController extends Controller
      */
     public function create()
     {
-        return view( 'admin.location.create', ['title' => 'Create Locations'] );
+        return view( 'location.create', ['title' => 'Create Locations'] );
     }
 
     public function status_update(Request $request)
@@ -65,6 +65,7 @@ class LocationController extends Controller
                         'name' => $request->name,
                         'slug' => Str::slug($request->name),
                         'parent' => $request->parent,
+                        'iframe' => $request->iframe,
                         // 'description' => $request->description,
                        // 'feature_image' => $filename
                     );
@@ -121,7 +122,7 @@ class LocationController extends Controller
     {
 
         $category = Location::find($id);
-        return view( 'admin.location/edit', ['title' => 'Edit locations', 'category' => $category] );
+        return view( 'location/edit', ['title' => 'Edit locations', 'category' => $category] );
     }
 
 
@@ -137,12 +138,13 @@ class LocationController extends Controller
     public function update(Request $request, $id)
     {
         $filename = '';
-        
+
 
         $array = array(
                         'name' => $request->name,
                         'slug' => Str::slug($request->name),
                         'parent' => $request->parent,
+                        'iframe' => $request->iframe,
                     );
 
         if( Location::where('id', $id)->update( $array ) )
@@ -162,7 +164,7 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
-       
+
         if( Location::where('id', $id)->delete() )
             return redirect()->back()->with('cat_msg', 'Location deleted successfully!');
 

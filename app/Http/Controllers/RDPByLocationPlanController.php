@@ -28,10 +28,10 @@ class RDPByLocationPlanController extends Controller
         'unpublish' => 'rdplocationplan.unpublish',
         'duplicate' => 'rdplocationplan.duplicate'
     );
-    private $view = array('create' => 'admin.rdplocationplan.create',
-        'edit' => 'admin.rdplocationplan.edit',
-        'index' => 'admin.rdplocationplan.index',
-        'show' => 'admin.rdplocationplan.show');
+    private $view = array('create' => 'rdplocationplan.create',
+        'edit' => 'rdplocationplan.edit',
+        'index' => 'rdplocationplan.index',
+        'show' => 'rdplocationplan.show');
 
     private $indexvariables = array(
         'title' => 'ALL RDP By Location Plan',
@@ -487,7 +487,7 @@ class RDPByLocationPlanController extends Controller
 
     public function index()
     {
-        $posts = $this->modelname::orderBy('id', 'desc')->paginate($this->indexpagination);
+        $posts = $this->modelname::orderBy('id', 'desc')->get();
         $fields = $this->indexfields;
         return view($this->view['index'])->with($this->multipostvar, $posts)
             ->with('fields', $fields)

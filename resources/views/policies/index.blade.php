@@ -7,21 +7,21 @@
                     <h3 class="fw-bold mb-3">Policies</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
-                            <i class="icon-home"></i>
-                          </a>
+                            <a href="/">
+                                <i class="icon-home"></i>
+                            </a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('policies.index')}}">Policies</a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Policies</a>
+                            <a href="{{ route('policies.index')}}">List</a>
                         </li>
                     </ul>
             </div>
@@ -31,7 +31,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Policies</h4>
-                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus"></i> New Policies </a>
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New Policies </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -77,7 +77,7 @@
                                                 @endforeach
                                                 <td class="actions">
                                                     <a href="{{ route($route['show'], $notice->id)}}">
-                                                        <button class="btn btn-sm btn-primary">
+                                                        <button class="btn btn-sm btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
@@ -86,6 +86,14 @@
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
+                                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+
+                                                    <form id="delete-form-{{ $notice->id }}" action="{{ route($route['destroy'], $notice->id) }}" method="POST" style="display: none;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -94,9 +102,7 @@
                                 </table>
                             </div>
 
-                            <div class="text-center">
-                                {!! ${$multipostvar}->render() !!}
-                            </div>
+
                         </h5>
                     </div>
                 </div>

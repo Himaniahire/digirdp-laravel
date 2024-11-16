@@ -23,13 +23,13 @@ class FeaturesController extends Controller
         $features_card = DB::table('features_card')
                     ->orderBy('card_id', 'desc')
                     ->join('features_card_category', 'features_card.category_id', '=', 'features_card_category.category_id')
-                    ->paginate(10);
+                    ->get();
 
 
         $features_count = DB::table('features_card')->count();
 
 
-        return view('admin.features.index')
+        return view('features.index')
             ->with('features_card', $features_card)
             ->with('features_count', $features_count);
     }
@@ -38,7 +38,7 @@ class FeaturesController extends Controller
     {
         $feature_category = DB::table('features_card_category')->get();
 
-        return view('admin.features.create')
+        return view('features.create')
         ->with('feature_category', $feature_category);
     }
 
@@ -49,8 +49,8 @@ class FeaturesController extends Controller
                     ->join('features_card_category', 'features_card.category_id', '=', 'features_card_category.category_id')
                     ->where('card_id', $id)
                     ->first();
-        
-        return view('admin.features.show')
+
+        return view('features.show')
         ->with('features_card', $features_card);
     }
 
@@ -73,7 +73,7 @@ class FeaturesController extends Controller
                 'category_id' => $request->category_id,
                 'card_image' => $pathToImage
             ]);
-        
+
         return redirect()->route('features.show', $id);
     }
 
@@ -85,7 +85,7 @@ class FeaturesController extends Controller
 
         $feature_category = DB::table('features_card_category')->get();
 
-        return view('admin.features.edit')
+        return view('features.edit')
             ->with('features', $features)
             ->with('feature_category', $feature_category);
     }
@@ -105,7 +105,7 @@ class FeaturesController extends Controller
             $data = DB::table('features_card')->where('card_id', $id)->first();
             File::delete($data->card_image);
             $imageName = time().'.'.$image->getClientOriginalExtension();
-    
+
             $image->move('uploads/features', $imageName);
             $pathToImage = 'uploads/features'.'/'.$imageName;
             $updates['card_image'] = $pathToImage;
@@ -114,7 +114,7 @@ class FeaturesController extends Controller
         $insert_feature = DB::table('features_card')
             ->where('card_id', $id)
             ->update($updates);
-        
+
         return redirect()->route('features.show', $id);
     }
 

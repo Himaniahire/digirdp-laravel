@@ -22,7 +22,7 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">Add</a>
+            <a href="#">Create</a>
           </li>
         </ul>
       </div>
@@ -42,7 +42,7 @@
 
                                 <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                     <label class=" control-label"
-                                            for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+                                            for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="">
                                         <div class="input-group">
@@ -71,90 +71,21 @@
                                 </div>
                             </div>
                             @endforeach
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required">*</sup>
-                                    </label>
-                                    <div class="">
-                                        <div class="input-group">
-                                            <select class="form-control border-input" name="role" >
-                                                <option value="1">Admin</option>
-                                                <option value="2">Editor</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Profile <sup class="required">*</sup>
-                                    </label>
-                                    <div class="">
-                                        <div class="input-group">
-                                            <input type="file" required="" name="feature_image">
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required">*</sup>
-                                    </label>
-                                    <div class="" >
-                                        <div class="input-group">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Select</th>
-                                                        <th>Permission</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @php $sidebarItem = Config::get('app.sidebar'); @endphp
-                                                    @foreach($sidebarItem as $item)
-                                                        <tr>
-                                                            <td>
-                                                                <input type="checkbox" name="permission[]" value="{{ $item['route'] }}">
-                                                            </td>
-                                                            <td>
-                                                                {{ $item['label'] }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <div class="">
-                                        <div class="input-group">
-                                            <label class="col-lg-6 control-label" for="deleteoption"><input class=" border-input" id="deleteoption"  value="1" name="delete"   type="checkbox"> Enable Delete Option </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-action">
-                                {!! Form::submit('Create User', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  )) !!}
-                                <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
-
-                            </div>
 
                         </div>
                         {!! Form::close() !!}
                     </div>
-                    <div class="card-action">
-                        {!! Form::submit('Create Testimonial', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
-                      </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+
+</div>
+
 <script>
 	$(document).ready(function() {
 	    $('select').select2();

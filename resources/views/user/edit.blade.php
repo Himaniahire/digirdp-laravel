@@ -5,7 +5,7 @@
 <div class="container">
     <div class="page-inner">
       <div class="page-header">
-        <h3 class="fw-bold mb-3">Testimonial</h3>
+        <h3 class="fw-bold mb-3">User</h3>
         <ul class="breadcrumbs mb-3">
           <li class="nav-home">
             <a href="/">
@@ -39,7 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                     <label class="control-label"
-                                            for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+                                            for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="">
 
@@ -75,7 +75,7 @@
                             @endforeach
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Profile <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Profile <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Password <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Password <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Select Sidebar  <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Select Sidebar  <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required">*</sup>
+                                <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required" style="color:red; font-size:16px;">*</sup>
                                 </label>
                                 <div class="" >
                                     <div class="input-group">
@@ -160,13 +160,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-action">
+                                {!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
+                                <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
+                            </div>
                         </div>
                         {!! Form::close() !!}
                     </div>
-                    <div class="card-action">
-                        {!! Form::submit('Update', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
-                        <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
-                    </div>
+
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">Policies</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,18 +15,25 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('policies.index')}}">Policies</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Policies</a>
+                        <a href="{{ route('policies.create')}}">Add</a>
                     </li>
                 </ul>
             </div>
 
             <div class="card">
+                <div class="card-header">
+                    <h4 class="title" style="font-weight: bold;"> {{$createvar['title']}}
+
+                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
+                   </h4>
+
+                </div>
                 <div class="card-body">
                     <h4>
                         {!! Form::open([
@@ -40,10 +47,10 @@
                         @foreach ($fields as $field => $fv)
                         <div class="col-md-6">
                             <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
-                                <label class="{{ $fv['label_length'] }} control-label" for="NEW_subject">{{ $fv['label'] }}
+                                <label class=" control-label" for="NEW_subject">{{ $fv['label'] }}
                                 <sup class="required fs-5 text-danger" >*</sup>
                                 </label>
-                                <div class="{{ $fv['field_length'] }}">
+                                <div class="">
 
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -52,7 +59,7 @@
                                         @if (!strcmp($fv['type'], 'text'))
                                             {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'textarea'))
-                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras']) !!}
+                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
                                         @elseif(!strcmp($fv['type'], 'select'))
                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'checkbox'))
@@ -76,12 +83,14 @@
                         </div>
                         @endforeach
                          </div>
-                        <div class="form-group">
-                            {!! Form::submit($createvar['title'], [
-                                'class' => 'btn pull-down btn-success btn-lg col-lg-10 col-md-offset-2 col-xs-offset-3 text-center',
-                                'id' => 'submit',
-                            ]) !!}
-                        </div>
+
+                                <div class="form-group">
+                                        {!! Form::submit($createvar['title'], [
+                                            'class' => 'btn pull-down btn-success btn-lg col-lg-10 col-md-offset-2 col-xs-offset-3 text-center',
+                                            'id' => 'submit',
+                                        ]) !!}
+                                </div>
+
                         {!! Form::close() !!}
                     </h4>
                 </div>

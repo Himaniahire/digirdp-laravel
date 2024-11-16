@@ -7,31 +7,34 @@
                     <h3 class="fw-bold mb-3">Policies</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
-                            <i class="icon-home"></i>
-                          </a>
+                            <a href="/">
+                                <i class="icon-home"></i>
+                            </a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('policies.index')}}">Policies</a>
                         </li>
                         <li class="separator">
-                          <i class="icon-arrow-right"></i>
+                            <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Policies</a>
+                            <a href="#">Details</a>
                         </li>
                     </ul>
             </div>
             <div class="row">
                 <div class="col-md-12">
                 <div class="card" >
+                    <div class="card-header">
+                        <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
+                    </div>
                     <!-- Content goes here -->
                     <div class="card-body" >
                         <h4>
-                            <table class="table table-hover table-bordered">
+                            <table id="basic-datatables" class="display table table-striped table-hover">
                                 <tbody>
                                 <tr>
                                     <th>Sl. No.</th>
@@ -74,6 +77,7 @@
 
                                 </tbody>
                             </table>
+
                         </h4>
                     </div>
                 </div>

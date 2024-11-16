@@ -28,17 +28,17 @@ class BlogController extends Controller
     {
         $blogs = Post::with('user')->get();
         //dd($blogs);
-        return view( 'admin.blog.index', ['title' => 'Blogs','blogs'=>$blogs, 'type' => $this->type]);
+        return view( 'blog.index', ['title' => 'Blogs','blogs'=>$blogs, 'type' => $this->type]);
     }
-    
+
     public function blog_delete(Request $request){
         Post::destroy($request->id);
         return redirect( route('blogs.index') );
     }
-    
+
       public function processFile( $request, $update = 0)
     {
-       
+
             if ($request->file('feature_image')->isValid())
             {
                 $imginpname = $request->file('feature_image');
@@ -58,7 +58,7 @@ class BlogController extends Controller
     }
 
     public function update_flag(Request $req){
- 
+
         if($req->status=="add"){
             Post::where('id',$req->article_id)->update(['flag'=>1]);
         }else{
@@ -77,7 +77,7 @@ class BlogController extends Controller
     {
 
         $categories = Category::where('parent', null)->get();
-        return view('admin.blog.create', ['title' => 'Create post', 'type' => $this->type, 'categories' => $categories]);
+        return view('blog.create', ['title' => 'Create post', 'type' => $this->type, 'categories' => $categories]);
     }
 
     /**
@@ -89,7 +89,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $input = $request->except(['_token']);
-      
+
         $input['slug'] = Str::slug( $request->title );
         //$input['excerpt'] = get_excerpt( $request->content, 40 );
         $input['status'] = 1;
@@ -125,8 +125,8 @@ class BlogController extends Controller
                     'title' => 'Edit post',
                     'type' => $this->type,
                     'post' => Post::find( $id )
-                );  
-        return view('admin.blog.edit', $array);
+                );
+        return view('blog.edit', $array);
     }
 
     /**
@@ -146,9 +146,9 @@ class BlogController extends Controller
 
     public function update(Request $request, $id)
     {
-  
+
         $post = Post::findOrFail( $id );
-        
+
         if( !$post )
             return redirect()->back()->with('post_err', 'Post not found!');
 
@@ -157,7 +157,7 @@ class BlogController extends Controller
         $input['slug'] = Str::slug( $request->title );
         //$input['excerpt'] = get_excerpt( $request->content, 40 );
         $input['status'] = 1;
-       
+
         if( $request->hasFile('feature_image') ) {
            $input['feature_image'] = $this->processFile($request);
         }
@@ -165,9 +165,9 @@ class BlogController extends Controller
         $input['post_by'] = Auth::id();
         unset($input['_method']);
         Post::where('id', $id)->update($input);
-        
+
         return redirect()->back()->with('post_msg', 'Post successfully updated!');
-        
+
     }
 
     /**
