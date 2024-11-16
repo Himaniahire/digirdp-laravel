@@ -51,6 +51,8 @@ class VPSController extends Controller
     private $saveSuccess    = 'The CLOUD VPS  was successfully saved.';
     private $deletionSuccess = 'CLOUD VPS  Deleted Successfully';
     private $updationSuccess = 'CLOUD VPS  Updated Successfully';
+    private $publishSuccess = 'VPS published Successfully';
+    private $unpublishSuccess = 'VPS unpublished Successfully';
     private $singlepostvar  = "vps";
     private $multipostvar   = "vps";
     private $indexpagination = 10;
@@ -430,6 +432,7 @@ class VPSController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -440,6 +443,7 @@ class VPSController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

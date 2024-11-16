@@ -94,24 +94,24 @@
                                             <td class="actions">
                                                 @if(!$notice->is_published)
                                                     <a href="{{ route('rdpplan.publish', $notice->id)}}">
-                                                        <button class="btn btn-sm btn-primary">
+                                                        <button title="Publish" class="btn btn-lg btn-link btn-success">
                                                             <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
                                                 @else
                                                     <a href="{{ route('rdpplan.unpublish', $notice->id)}}">
-                                                        <button class="btn btn-sm btn-danger">
+                                                        <button title="Unpublish" class="btn btn-lg btn-link btn-danger">
                                                             <i class="fa fa-thumbs-down" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
                                                 @endif
                                                 <a href="{{route('rdpplan.show', $notice->id)}}">
-                                                    <button class="btn btn-sm btn-primary">
+                                                    <button title="Detail" class="btn btn-lg btn-link btn-primary">
                                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                                     </button>
                                                 </a>
                                                 <a href="{{route('rdpplan.edit', $notice->id)}}">
-                                                    <button class="btn btn-sm btn-warning">
+                                                    <button title="edit" class="btn btn-sm btn-primary">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
                                                 </a>

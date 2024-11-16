@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> Blogs
 
-                        <a href="{{ route('blogs.index') }}" class="btn btn-primary float-end btn-round ms-auto" ><i class="fas fa-angle-left"></i> Cancel</a>
+                        
                    </h4>
                 </div>
                 <div class="card-body">

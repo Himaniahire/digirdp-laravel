@@ -31,7 +31,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title"> CREATE NEW FEATURE</h4>
-                            <a href="{{ route('features.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel</a>
+                            
                         </div>
                     </div>
                     <!-- Content goes here -->

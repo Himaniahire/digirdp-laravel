@@ -30,9 +30,7 @@
                 <div class="card" >
                     <div class="card-header">
 				        <h4 class="title">Category
-				            <a href="{{ route('category.create') }}" class="btn btn-success pull-right">
-				            	<i class="fa fa-plus"></i> Add Category
-				            </a>
+				            
 
 			            </h4>
 			        </div>

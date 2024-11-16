@@ -29,8 +29,6 @@
                 <div class="col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
-
                         <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
                     </div>
                     <!-- Content goes here -->

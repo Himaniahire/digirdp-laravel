@@ -5,3 +5,4 @@
 @include('layouts.footer')
 @yield('footer-script')
 @include('layouts.footer-script')
+@include('layouts.flash')

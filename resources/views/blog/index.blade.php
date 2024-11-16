@@ -79,7 +79,7 @@
 				                                    </button>
 				                                </a> -->
 				                                <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
-				                                    <button class="btn btn-sm btn-warning">
+				                                    <button title="Edit" class="btn btn-lg btn-link btn-primary">
 				                                        <i class="fas fa-edit"></i>
 				                                    </button>
 				                                </a>

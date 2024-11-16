@@ -29,12 +29,7 @@
                 <div class="col-md-12">
                 <div class="card" >
                     <div class="card-header">
-				        <h4 class="title">Category
-				            <a href="{{ route('category.index') }}" class="btn btn-primary btn-round float-end">
-				            	<i class=" fas fa-angle-left"></i> Cancel
-				            </a>
-
-			            </h4>
+				        <h4 class="title">Category       </h4>
 			        </div>
                     <!-- Content goes here -->
                     <div class="card-body" >

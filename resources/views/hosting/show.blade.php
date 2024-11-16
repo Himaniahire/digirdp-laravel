@@ -29,7 +29,7 @@
                 <div class="col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
+
 
                         <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
                     </div>
@@ -105,24 +105,24 @@
                                         <td class="actions">
                                             @if(!$notice->is_published)
                                                 <a href="{{ route('hostingplan.publish', $notice->id)}}">
-                                                    <button class="btn btn-sm btn-primary">
+                                                    <button title="publish" class="btn btn-lg btn-link btn-success">
                                                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                                     </button>
                                                 </a>
                                             @else
                                                 <a href="{{ route('hostingplan.unpublish', $notice->id)}}">
-                                                    <button class="btn btn-sm btn-danger">
+                                                    <button title="Unpublish" class="btn btn-lg btn-link btn-danger">
                                                         <i class="fa fa-thumbs-down" aria-hidden="true"></i>
                                                     </button>
                                                 </a>
                                             @endif
                                             <a href="{{route('hostingplan.show', $notice->id)}}">
-                                                <button class="btn btn-sm btn-primary">
+                                                <button title="Detail" class="btn btn-lg btn-link btn-info">
                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button>
                                             </a>
                                             <a href="{{route('hostingplan.edit', $notice->id)}}">
-                                                <button class="btn btn-sm btn-warning">
+                                                <button title="Edit" class="btn btn-lg btn-link btn-primary">
                                                     <i class="fa fa-pencil"></i>
                                                 </button>
                                             </a>

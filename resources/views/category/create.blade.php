@@ -29,7 +29,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> Blogs
-                            <button type="button" class="btn btn-primary pull-right" onclick="window.location='{{ url()->previous() }}'">Cancel</button>
+                            
                         </h4>
                    </h4>
                 </div>

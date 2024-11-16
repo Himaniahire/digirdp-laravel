@@ -30,9 +30,7 @@
                 <div class="card" >
                     <div class="card-header">
 				        <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
-				            <a href="{{ route('blog.create') }}" class="btn btn-success pull-right">
-				            	<i class="fa fa-plus"></i> Add Blog
-				            </a>
+				           
 
 			            </h4>
 			        </div>

@@ -29,8 +29,6 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> {{$createvar['title']}}
-
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
                    </h4>
 
                 </div>

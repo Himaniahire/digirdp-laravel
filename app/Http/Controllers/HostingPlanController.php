@@ -52,6 +52,8 @@ class HostingPlanController extends Controller
     private $saveSuccess    = 'The Hosting PLAN was successfully saved.';
     private $deletionSuccess = 'Hosting PLAN Deleted Successfully';
     private $updationSuccess = 'Hosting PLAN updated Successfully';
+    private $publishSuccess = 'Hosting PLAN published Successfully';
+    private $unpublishSuccess = 'Hosting PLAN unpublished Successfully';
     private $singlepostvar  = "hostingplan";
     private $multipostvar   = "hostingplan";
     private $indexpagination = 10;
@@ -753,6 +755,7 @@ class HostingPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->back();
     }
 
@@ -763,6 +766,7 @@ class HostingPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->back();
     }
 

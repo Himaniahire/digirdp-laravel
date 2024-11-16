@@ -53,6 +53,8 @@ class RDPPlanController extends Controller
     private $saveSuccess    = 'The RDP PLAN was successfully saved.';
     private $deletionSuccess = 'RDP PLAN Deleted Successfully';
     private $updationSuccess = 'RDP PLAN updated Successfully';
+    private $publishSuccess = 'RDP PLAN published Successfully';
+    private $unpublishSuccess = 'RDP PLAN unpublished Successfully';
     private $singlepostvar  = "rdpplan";
     private $multipostvar   = "rdpplan";
     private $indexpagination = 10;
@@ -754,6 +756,7 @@ class RDPPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->back();
     }
 
@@ -764,6 +767,7 @@ class RDPPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->back();
     }
 
