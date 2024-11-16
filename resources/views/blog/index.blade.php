@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Blogs</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('blogs.index')}}">Blogs</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -79,7 +79,7 @@
 				                                    </button>
 				                                </a> -->
 				                                <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
-				                                    <button class="btn btn-sm btn-warning">
+				                                    <button title="Edit" class="btn btn-lg btn-link btn-primary">
 				                                        <i class="fas fa-edit"></i>
 				                                    </button>
 				                                </a>

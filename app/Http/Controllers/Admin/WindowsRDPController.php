@@ -52,6 +52,8 @@ class WindowsRDPController extends Controller
     private $saveSuccess    = 'The RDP  was successfully saved.';
     private $deletionSuccess = 'RDP  Deleted Successfully';
     private $updationSuccess = 'RDP  Updated Successfully';
+    private $publishSuccess = 'RDP published Successfully';
+    private $unpublishSuccess = 'RDP unpublished Successfully';
     private $singlepostvar  = "rdp";
     private $multipostvar   = "rdp";
     private $indexpagination = 10;
@@ -467,6 +469,7 @@ class WindowsRDPController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);  
         return redirect()->route($this->route['index']);
     }
 
@@ -477,6 +480,7 @@ class WindowsRDPController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

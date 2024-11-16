@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">FAQ</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('faq.index')}}">FAQ</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -77,16 +77,16 @@
                                                 @endforeach
                                                 <td class="actions">
                                                     <a href="{{ route($route['show'], $notice->id)}}">
-                                                        <button class="btn btn-sm btn-info">
+                                                        <button title="Detail" class="btn btn-lg btn-link btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
                                                     <a href="{{ route($route['edit'], $notice->id) }}">
-                                                        <button class="btn btn-sm btn-warning">
+                                                        <button title="Edit" class="btn btn-lg btn-link btn-warning">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
-                                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                    <a href="#" title="Delete" onclick="event.preventDefault(); confirmDelete('{{ $notice->id }}');" class="btn btn-danger btn-lg btn-link mt-0" style="margin-top: -15px;">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
 
@@ -116,5 +116,26 @@
 
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script>
+        function confirmDelete(id) {
+            // Show SweetAlert2 confirmation dialog
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If user confirmed, submit the delete form
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            });
+        }
+    </script>
 @endsection

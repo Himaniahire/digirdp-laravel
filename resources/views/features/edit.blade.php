@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Features</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,8 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('features.index')}}">Features</a>
+
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -31,7 +32,7 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Edit</h4>
-                            <a href="{{ route('features.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel </a>
+                            
                         </div>
                     </div>
                     <!-- Content goes here -->

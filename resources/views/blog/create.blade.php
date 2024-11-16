@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">Blogs</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,7 +15,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('blogs.index')}}">Blogs</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> Blogs
 
-                        <a href="{{ route('blog.index') }}" class="btn btn-primary float-end btn-round ms-auto" ><i class="fas fa-angle-left"></i> Cancel</a>
+                        
                    </h4>
                 </div>
                 <div class="card-body">

@@ -53,6 +53,8 @@ class DedicatedPlanController extends Controller
     private $saveSuccess    = 'The DEDICATED PLAN was successfully saved.';
     private $deletionSuccess = 'DEDICATED PLAN Deleted Successfully';
     private $updationSuccess = 'DEDICATED PLAN updated Successfully';
+    private $publishSuccess = 'DEDICATED PLAN published Successfully';
+    private $unpublishSuccess = 'DEDICATED PLAN unpublished Successfully';
     private $singlepostvar  = "dedicatedplan";
     private $multipostvar   = "dedicatedplan";
     private $indexpagination = 10;
@@ -757,6 +759,7 @@ class DedicatedPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->back();
     }
 
@@ -767,6 +770,7 @@ class DedicatedPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->back();
     }
 

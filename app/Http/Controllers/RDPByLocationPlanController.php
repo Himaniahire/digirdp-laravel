@@ -53,6 +53,8 @@ class RDPByLocationPlanController extends Controller
     private $saveSuccess    = 'The RDP By Location Plan was successfully saved.';
     private $deletionSuccess = 'RDP By Location Plan Deleted Successfully';
     private $updationSuccess = 'RDP By Location Plan updated Successfully';
+    private $publishSuccess = 'RDP By Location Plan published Successfully';
+    private $unpublishSuccess = 'RDP By Location Plan unpublished Successfully';
     private $singlepostvar  = "rdplocationplan";
     private $multipostvar   = "rdplocationplan";
     private $indexpagination = 10;
@@ -702,6 +704,7 @@ class RDPByLocationPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->back();
     }
 
@@ -712,6 +715,7 @@ class RDPByLocationPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->back();
     }
 

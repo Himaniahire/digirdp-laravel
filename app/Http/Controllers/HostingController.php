@@ -50,6 +50,8 @@ class HostingController extends Controller
     private $saveSuccess    = 'The HOSTING  was successfully saved.';
     private $deletionSuccess = 'HOSTING  Deleted Successfully';
     private $updationSuccess = 'HOSTING  Updated Successfully';
+    private $publishSuccess = 'HOSTING published Successfully';
+    private $unpublishSuccess = 'HOSTING  unpublished Successfully';
     private $singlepostvar  = "hosting";
     private $multipostvar   = "hosting";
     private $indexpagination = 10;
@@ -431,6 +433,7 @@ class HostingController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -441,6 +444,7 @@ class HostingController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

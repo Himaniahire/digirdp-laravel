@@ -51,6 +51,8 @@ class RDPByLocationController extends Controller
     private $saveSuccess    = 'The rdp by location  was successfully saved.';
     private $deletionSuccess = 'RDP By Location  Deleted Successfully';
     private $updationSuccess = 'RDP By Location  Updated Successfully';
+    private $publishSuccess = 'RDP By Location published Successfully';
+    private $unpublishSuccess = 'RDP By Location unpublished Successfully';
     private $singlepostvar  = "rdplocation";
     private $multipostvar   = "rdplocation";
     private $indexpagination = 10;
@@ -432,6 +434,7 @@ class RDPByLocationController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -442,6 +445,7 @@ class RDPByLocationController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

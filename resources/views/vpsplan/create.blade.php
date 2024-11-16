@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">VPS Plan</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,7 +15,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('vpsplan.index')}}">VPS Plan</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
@@ -30,9 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> {{$createvar['title']}}
 
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
                    </h4>
-
                 </div>
                 <div class="card-body">
                     <h4>

@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Hosting Plan</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('hostingplan.index')}}">Hosting Plan</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -29,8 +29,7 @@
                 <div class="col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
-
+                       
                         <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
                     </div>
                     <!-- Content goes here -->

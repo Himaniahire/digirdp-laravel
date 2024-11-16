@@ -308,7 +308,7 @@ class SliderController extends Controller
         $post->save();
 
         Session::flash('success', $this->updationSuccess);
-
+        // dd(session()->all());
         return redirect()->route($this->route['show'], $post->id);
     }
 

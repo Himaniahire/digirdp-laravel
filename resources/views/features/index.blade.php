@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Features</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,8 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('features.index')}}">Features</a>
+
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -67,16 +68,16 @@
 											<td>{{ substr($fc->card_content,0,20) }}{{ strlen($fc->card_content) > 20 ? "..." : ""}}</td>
 				                            <td class="actions">
 				                                <a href="{{ route('features.show', $fc->card_id)}}">
-				                                    <button class="btn btn-sm btn-primary">
+				                                    <button title="Detail" class="btn btn-lg btn-link btn-info">
 				                                        <i class="fas fa-eye" aria-hidden="true"></i>
 				                                    </button>
 				                                </a>
 				                                <a href="{{ route('features.edit', $fc->card_id) }}">
-				                                    <button class="btn btn-sm btn-warning">
+				                                    <button title="Edit" class="btn btn-lg btn-link btn-primary">
 				                                        <i class="fas fa-edit"></i>
 				                                    </button>
 				                                </a>
-                                                <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $fc->card_id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                <a href="#" title="Delete" onclick="event.preventDefault(); confirmDelete('{{ $fc->card_id }}');" class="btn btn-danger btn-lg btn-link mt-0" style="margin-top: -15px;">
                                                     <i class="fas fa-trash"></i>
                                                 </a>
 
@@ -106,5 +107,26 @@
 
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script>
+        function confirmDelete(id) {
+            // Show SweetAlert2 confirmation dialog
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'Cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If user confirmed, submit the delete form
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            });
+        }
+    </script>
 @endsection

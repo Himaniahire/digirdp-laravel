@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Blog</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('blogs.index')}}">Blogs</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -30,9 +30,7 @@
                 <div class="card" >
                     <div class="card-header">
 				        <h3 class="title"><strong>{{$showvar['title']}}</strong></h3>
-				            <a href="{{ route('blog.create') }}" class="btn btn-success pull-right">
-				            	<i class="fa fa-plus"></i> Add Blog
-				            </a>
+				           
 
 			            </h4>
 			        </div>
