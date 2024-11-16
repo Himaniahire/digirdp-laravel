@@ -211,8 +211,8 @@ class HostingController extends Controller
         'name'  => array('label' => 'Hosting Name' ),
         'logo' => array('label' => 'Hosting Logo' ),
         'start_price'  => array('label' => 'Hosting Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

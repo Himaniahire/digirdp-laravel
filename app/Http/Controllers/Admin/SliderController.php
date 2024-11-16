@@ -134,8 +134,8 @@ class SliderController extends Controller
         'id' => array('label' => '#'),
         'slider_heading'  => array('label' => 'Slider Name' ),
         'slider_image' => array('label' => 'Slider Image' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

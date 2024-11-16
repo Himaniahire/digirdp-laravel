@@ -240,8 +240,8 @@ class WindowsRDPController extends Controller
         'logo' => array('label' => 'RDP Logo' ),
         'start_price'  => array('label' => 'RDP Pricing' ),
         'menu_item_name' => array('label' => 'Menu Category' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );
@@ -469,7 +469,7 @@ class WindowsRDPController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
-        Session::flash('success', $this->unpublishSuccess);  
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 

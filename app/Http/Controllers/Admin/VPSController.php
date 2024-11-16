@@ -210,8 +210,8 @@ class VPSController extends Controller
         'name'  => array('label' => 'CLOUD VPS Name' ),
         'logo' => array('label' => 'CLOUD VPS Logo' ),
         'start_price'  => array('label' => 'CLOUD VPS Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -226,8 +226,8 @@ class VPSController extends Controller
         'start_price'  => array('label' => 'CLOUD VPS Pricing' ),
         'created_at'=> array('label' => 'Created At'),
         'updated_at'=> array('label' => 'Updated At'),
-        'show_in_header'=> array('label' => 'Show in Header'),
-        'show_in_footer'=> array('label' => 'Show in Footer'),
+        // 'show_in_header'=> array('label' => 'Show in Header'),
+        // 'show_in_footer'=> array('label' => 'Show in Footer'),
     );
 
 

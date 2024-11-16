@@ -43,8 +43,7 @@
                                             <tr>
                                                 <th>SN</th>
                                                 <th>Title</th>
-                                                <th>Status</th>
-                                                <th>Post By</th>
+                                                <th>Status</th> 
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -72,7 +71,7 @@
                                                         </button>
                                                     </a> --> --}}
                                                     <a href="{{ route('location.edit',['location'=>$bl->id]) }}">
-                                                        <button class="btn btn-sm btn-warning">
+                                                        <button title="Edit" class="btn btn-lg btn-link btn-primary">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>

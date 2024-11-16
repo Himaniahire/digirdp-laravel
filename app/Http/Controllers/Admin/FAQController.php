@@ -123,7 +123,7 @@ class FAQController extends Controller
         'question'  => array('label' => 'Question' ),
         'category_name'  => array('label' => 'Category' ),
         // 'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

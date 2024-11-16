@@ -215,8 +215,8 @@ class DedicatedController extends Controller
         'name'  => array('label' => 'Dedicated Name' ),
         'logo' => array('label' => 'Dedicated Logo' ),
         'start_price'  => array('label' => 'Dedicated Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
     private $showfields = array(

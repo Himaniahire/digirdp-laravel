@@ -211,8 +211,8 @@ class RDPByLocationController extends Controller
         'name'  => array('label' => 'RDP By Location Name' ),
         'logo' => array('label' => 'RDP By Location Logo' ),
         'start_price'  => array('label' => 'RDP By Location Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -225,8 +225,8 @@ class RDPByLocationController extends Controller
         'url_text' => array('label' => 'URL Text'),
         'logo' => array('label' => 'RDP By Location Logo' ),
         'start_price'  => array('label' => 'RDP By Location Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );

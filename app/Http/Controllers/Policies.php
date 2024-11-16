@@ -139,7 +139,7 @@ class Policies extends Controller
         'type' => array('label' => 'Type'),
         'start_date'=> array('label' => 'Start Date'),
         'content' => array('label' => 'Content'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

@@ -449,7 +449,7 @@ class RDPByLocationPlanController extends Controller
         'id' => array('label' => '#'),
 //        'RDPByLocation_name'  => array('label' => 'Belongs to Server'),
         'name'  => array('label' => 'Name' ),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
