@@ -31,18 +31,26 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Edit</h4>
-                            <a href="{{ route('features.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
                     <div class="card-body" >
                         {!! Form::open(array('url'=>route('location.update',['location'=>$category->id]),'method'=>'PATCH','class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files' => true)) !!}
 					    <div class="form-group">
-				    		<label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required">*</sup>
+				    		<label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required" style="color:red; font-size:16px;">*</sup>
 				    		</label>
 				    		<div class="col-lg-8" >
                                 <div class="input-group">
                                     <input type="text" name="name" class="form-control" value="{{ $category->name ?? ''  }}" required>
+                                </div>
+				    		</div>
+					    </div>
+                        <div class="form-group">
+				    		<label class="col-lg-4 control-label" for="NEW_subject">Location Iframe <sup class="required" style="color:red; font-size:16px;">*</sup>
+				    		</label>
+				    		<div class="col-lg-8" >
+                                <div class="input-group">
+                                    <input type="text" name="iframe" class="form-control" value="{{ $category->iframe ?? ''  }}" required>
                                 </div>
 				    		</div>
 					    </div>

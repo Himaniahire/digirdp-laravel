@@ -31,7 +31,6 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title"> Location</h4>
-                            <a href="{{ route('location.index') }}" class="btn btn-primary btn-round ms-auto"><i class="fas fa-angle-left"></i> Cancel</a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -39,7 +38,7 @@
                         <h5>
                             {!! Form::open(array('route'=>'location.store','class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files' => true)) !!}
                                 <div class="form-group">
-                                    <label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required">*</sup>
+                                    <label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="col-lg-8" >
                                         <div class="input-group">
@@ -47,8 +46,15 @@
                                         </div>
                                     </div>
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label" for="NEW_subject">Location Iframe <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                    </label>
+                                    <div class="col-lg-8" >
+                                        <div class="input-group">
+                                            <input type="text" name="iframe" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group" style="width: 40%;">
                                     {!! Form::submit('Add Location', array('class' => 'btn pull-down btn-success btn-lg col-lg-10 col-md-offset-2 col-xs-offset-3 text-center', 'id' => 'submit'  )) !!}
                                 </div>

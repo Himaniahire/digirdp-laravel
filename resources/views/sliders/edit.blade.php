@@ -41,7 +41,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                         <label class="control-label"
+<<<<<<< HEAD
                                                for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+=======
+                                               for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
+>>>>>>> 5b9ca5030e85407618f3a7b09dfd54fe436abd9a
                                         </label>
                                         <div class="">
 

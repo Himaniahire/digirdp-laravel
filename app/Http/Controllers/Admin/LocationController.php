@@ -65,6 +65,7 @@ class LocationController extends Controller
                         'name' => $request->name,
                         'slug' => Str::slug($request->name),
                         'parent' => $request->parent,
+                        'iframe' => $request->iframe,
                         // 'description' => $request->description,
                        // 'feature_image' => $filename
                     );
@@ -143,6 +144,7 @@ class LocationController extends Controller
                         'name' => $request->name,
                         'slug' => Str::slug($request->name),
                         'parent' => $request->parent,
+                        'iframe' => $request->iframe,
                     );
 
         if( Location::where('id', $id)->update( $array ) )

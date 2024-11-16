@@ -39,7 +39,7 @@
                             @foreach($fields as $field => $fv)
                             <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                 <label class="{{$fv['label_length']}} control-label"
-                                       for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+                                       for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
                                 </label>
                                 <div class="{{$fv['field_length']}}">
 
@@ -84,5 +84,9 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
                  
+=======
+
+>>>>>>> 5b9ca5030e85407618f3a7b09dfd54fe436abd9a
 @endsection

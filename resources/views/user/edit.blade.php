@@ -39,7 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                     <label class="control-label"
-                                            for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+                                            for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="">
 
@@ -75,7 +75,7 @@
                             @endforeach
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Profile <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Profile <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Password <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Password <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label" for="NEW_subject">Select Sidebar  <sup class="required">*</sup>
+                                    <label class="control-label" for="NEW_subject">Select Sidebar  <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="" >
                                         <div class="input-group">
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required">*</sup>
+                                <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required" style="color:red; font-size:16px;">*</sup>
                                 </label>
                                 <div class="" >
                                     <div class="input-group">

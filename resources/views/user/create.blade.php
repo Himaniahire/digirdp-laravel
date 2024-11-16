@@ -42,7 +42,7 @@
 
                                 <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                     <label class=" control-label"
-                                            for="NEW_subject">{{$fv['label']}} : <sup class="required">*</sup>
+                                            for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="">
                                         <div class="input-group">

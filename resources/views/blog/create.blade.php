@@ -43,7 +43,7 @@
                     <h5>
                         {!! Form::open(['route' => 'blogs.store', 'class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files' => true]) !!}
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Title <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Title <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <div class="input-group">
                                     <input type="text" name="title" class="form-control" required>
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Post Type <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Post Type <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <div class="input-group">
                                     <select class="form-control border-input" name="type">
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Category <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Category <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <div class="input-group">
                                     @php
@@ -77,37 +77,37 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Description <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Description <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <textarea id="description" name="description"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Feature Image <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Feature Image <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <input type="file" name="feature_image">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Title <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Title <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <textarea class="form-control" name="meta_title"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Keywords <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Keywords <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <textarea class="form-control" name="meta_keywords" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Descriptions <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Meta Descriptions <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <textarea class="form-control" name="meta_descriptions" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-4 control-label" for="NEW_subject">Tags <sup class="required">*</sup></label>
+                            <label class="col-lg-4 control-label" for="NEW_subject">Tags <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
                                 <textarea class="form-control" name="tags"></textarea>
                             </div>

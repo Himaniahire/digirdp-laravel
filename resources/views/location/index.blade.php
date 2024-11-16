@@ -30,8 +30,8 @@
                 <div class="card" >
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Features</h4>
-                            <a href="{{ route('features.create') }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New Features </a>
+                            <h4 class="card-title">Location</h4>
+                            <a href="{{ route('location.create') }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus me-1"></i>New Location </a>
                         </div>
                     </div>
                     <!-- Content goes here -->
@@ -66,11 +66,11 @@
                                                 </td>
                                                 <td>{{ $bl->user->name ?? '' }}</td>
                                                 <td class="actions">
-                                                    <!-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
+                                                    {{-- <!-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
                                                         <button class="btn btn-sm btn-primary">
                                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                                         </button>
-                                                    </a> -->
+                                                    </a> --> --}}
                                                     <a href="{{ route('location.edit',['location'=>$bl->id]) }}">
                                                         <button class="btn btn-sm btn-warning">
                                                             <i class="fas fa-edit"></i>
