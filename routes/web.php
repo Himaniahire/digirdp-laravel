@@ -18,9 +18,9 @@ Auth::routes();
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/index', function () {
+//     return view('index');
+// });
 
 // Route::get('/add_form', function () {
 //     return view('add_form');
@@ -34,6 +34,9 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('testimonials', \App\Http\Controllers\Admin\TestimonialsController::class);
+
+    Route::get('/change-password', [\App\Http\Controllers\ChangePasswordController::class, 'showChangePasswordForm'])->name('password.change.form');
+    Route::post('/change-password', [\App\Http\Controllers\ChangePasswordController::class, 'changePassword'])->name('password.change');
 
     Route::resource('sliders', \App\Http\Controllers\Admin\SliderController::class );
     Route::get('sliders/publish/{id}', [\App\Http\Controllers\Admin\SliderController::class, 'publish'])->name('sliders.publish');

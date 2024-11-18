@@ -6,8 +6,10 @@ use App\Models\Dedicated;
 use App\Models\FAQ;
 use App\Models\Message;
 use App\Models\Offer;
+use App\Models\Slider;
 use App\Models\RDPByLocation;
 use App\Models\RDPPlan;
+use App\Models\Blog;
 use App\Models\Testimonials;
 use App\Models\VPS;
 use App\Models\WindowsRdp;
@@ -27,30 +29,31 @@ class PublicController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    
+
     public function index(Request $request)
     {
         $windowsRDP = $this->cachedQuerySetProducts('windowsRDP','windows_rdps');
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $rdpPlan = $this->cachedQuerySetPlans('rdpPlan','r_d_p_plans');
         $dedicatedPlans = $this->cachedQuerySetPlans('dedicatedPlans','dedicated_plans');
         $cloudPlan = $this->cachedQuerySetPlans('cloudPlan','v_p_s_plans');
         $rdpLocationPlan = $this->cachedQuerySetPlans('rdpLocationPlan','r_d_p_by_location_plans');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $offers = $this->DBoffers();
         $faqs = $this->DBfaq();
         $testimonials = $this->DBtestimonials();
         $features_card = $this->DBfeaturesCard();
-        
+        $sliders  = $this->DBsliders();
+
         $description = "DigiRDP provides cheap admin RDP & Shared RDP on cheap prices. Buy Cheap RDP in USA, UK, Netherlands, France & India location on affordable prices.";
         $author = "DigiRDP admin";
         $title = " Buy Cheap RDP - Shared USA/UK/NL RDP @3.99$/M";
-        
+
         return view('welcome')->with('windowsRDP', $windowsRDP)
             ->with('cloudVPS', $cloudVPS)
             ->with('rdplocation', $rdplocation)
@@ -68,9 +71,9 @@ class PublicController extends Controller
             ->with('features_card', $features_card);
 
     }
-    
+
     public function forgot_password(Request $request){
-         
+
          Mail::send('mail', $data, function($message) {
              $message->to('abc@gmail.com', 'Tutorials Point')->subject
                 ('Laravel HTML Testing Mail');
@@ -84,7 +87,7 @@ class PublicController extends Controller
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $faqs = $this->DBfaq();
@@ -93,7 +96,7 @@ class PublicController extends Controller
         $about = cache()->remember('about', now()->addHours(24), function () {
             return About::find(1);
         });
-        
+
         $description = "Nothing is more frustrating than a remote working solution that is hampered by
                         attacks but fear not because DigiRDP servers are encrypted and fully secured. So, you can enjoy
                         a fully secure data management";
@@ -118,12 +121,12 @@ class PublicController extends Controller
         $related_article = cache()->remember('relatedArticle-'.$blog->slug, now()->addHours(24), function () use ($blog) {
             return Post::with(['category','user'])->where('status',1)->where('category_id',$blog->category->id)->limit(8)->get();
         });
-        
+
         $windowsRDP = $this->cachedQuerySetProducts('windowsRDP','windows_rdps');
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $faqs = $this->DBfaq();
@@ -131,7 +134,7 @@ class PublicController extends Controller
         $about = cache()->remember('about', now()->addHours(24), function () {
             return About::find(1);
         });
-        
+
         $title = $blog->title;
         $description = $blog->meta_descriptions ?? '';
         $meta_keywords = $blog->meta_keywords ?? '';
@@ -154,14 +157,14 @@ class PublicController extends Controller
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $testimonials = $this->DBtestimonials();
         $offers = cache()->remember('offersAll', now()->addHours(24), function () {
             return DB::table('offers')->where('is_published', 1)->orderBy('created_at', 'desc')->get();
         });
-        
+
         $title = "Buy Best RDP products";
         $description = "Nothing is more frustrating than a remote working solution that is hampered by
                         attacks but fear not because DigiRDP servers are encrypted and fully secured. So, you can enjoy
@@ -182,17 +185,17 @@ class PublicController extends Controller
     {
         $faq_category = DB::table('faq_category')->get();
         $faqs = FAQ::join('faq_category', 'f_a_q_s.category_id', '=', 'faq_category.category_id')->get();
-        
+
         $windowsRDP = $this->cachedQuerySetProducts('windowsRDP','windows_rdps');
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $faqs_demo = $this->DBfaq();
         $testimonials = $this->DBtestimonials();
-        
+
         $description = "Nothing is more frustrating than a remote working solution that is hampered by
                         attacks but fear not because DigiRDP servers are encrypted and fully secured. So, you can enjoy
                         a fully secure data management";
@@ -219,12 +222,12 @@ class PublicController extends Controller
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $faqs = $this->DBfaq();
         $testimonials = $this->DBtestimonials();
-        
+
         $description = "Nothing is more frustrating than a remote working solution that is hampered by
                         attacks but fear not because DigiRDP servers are encrypted and fully secured. So, you can enjoy
                         a fully secure data management";
@@ -250,7 +253,7 @@ class PublicController extends Controller
         $cloudVPS = $this->cachedQuerySetProducts('cloudVPS','v_p_s');
         $rdplocation =  $this->cachedQuerySetProducts('rdplocation','r_d_p_by_locations');
         $dedicatedServer = $this->cachedQuerySetProducts('dedicatedServer','dedicateds');
-        
+
         $planCount = $this->planCount();
         $configuration = $this->DBconfiguration();
         $faqs = $this->DBfaq();
@@ -258,13 +261,13 @@ class PublicController extends Controller
         $about = cache()->remember('about', now()->addHours(24), function () {
             return About::find(1);
         });
-        
+
         $title = "Buy Best RDP products";
         $description = "Nothing is more frustrating than a remote working solution that is hampered by
                         attacks but fear not because DigiRDP servers are encrypted and fully secured. So, you can enjoy
                         a fully secure data management";
         $author = "DigiRDP admin";
-        
+
         return view('about')->with('about', $about)->with('windowsRDP', $windowsRDP)
             ->with('cloudVPS', $cloudVPS)->with('counts', $planCount)
             ->with('rdplocation', $rdplocation)
@@ -279,7 +282,7 @@ class PublicController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function saveMessage(Request $request)
-    {     
+    {
         $windowsRDP = DB::table('windows_rdps')->where('is_published', 1)
             ->orderBy('created_at', 'desc')->get();
         $cloudVPS =  DB::table('v_p_s')->where('is_published', 1)
@@ -352,10 +355,10 @@ class PublicController extends Controller
         $features_rdp = DB::table('features_rdp')->get();
 
         $features_card = DB::table('features_card')
-                        ->where('category_id', 1)    
+                        ->where('category_id', 1)
                         ->get();
 
-        
+
         return view('plans')->with('planDetails', $planDetails[0])
             ->with('plans', $plans)->with('windowsRDP', $windowsRDP)
             ->with('cloudVPS', $cloudVPS)->with('faqs', $faqs)
@@ -448,9 +451,9 @@ class PublicController extends Controller
         $features_rdp = DB::table('features_rdp')->get();
 
         $features_card = DB::table('features_card')
-                        ->where('category_id', 1)    
+                        ->where('category_id', 1)
                         ->get();
-                        
+
         return view('plans')->with('planDetails', $planDetails[0])
             ->with('plans', $plans)->with('windowsRDP', $windowsRDP)
             ->with('cloudVPS', $cloudVPS)->with('faqs', $faqs)
@@ -501,13 +504,13 @@ class PublicController extends Controller
         $plans = DB::table('v_p_s_plans')->where('vps_id', $planDetails[0]->id)->where('is_published', 1)
             ->orderBy('priority', 'desc')->get();
         $description = "DigiRDP provides cheap linux SSD VPS on affordable prices & you can buy linux SSD VPS for your website on cheap prices @6.99$/M, fast & reliable VPS";
-        
-        
+
+
         $features_card = DB::table('features_card')
-                        ->where('category_id', 3)    
+                        ->where('category_id', 3)
                         ->get();
-        
-        
+
+
         return view('plans')->with('planDetails', $planDetails[0])
             ->with('plans', $plans)->with('windowsRDP', $windowsRDP)
             ->with('cloudVPS', $cloudVPS)->with('faqs', $faqs)
@@ -557,9 +560,9 @@ class PublicController extends Controller
             "rdplocation" => DB::table('r_d_p_by_location_plans')->get()->count()
         ];
         $description = "DigiRDP provides cheap Dedicated RDP SSD. Buy Cheap Dedicated RDP in USA, UK, Netherlands, France & India location on affordable prices";
-        
+
         $features_card = DB::table('features_card')
-                        ->where('category_id', 2)    
+                        ->where('category_id', 2)
                         ->get();
 
         return view('plans')->with('planDetails', $planDetails[0])
@@ -631,7 +634,7 @@ class PublicController extends Controller
                                 to your needs no matter the scale";
                 $url = "rdpbylocation-plan";
                 break;
-            
+
             default: return $this->Error404();
         }
 
@@ -768,7 +771,7 @@ class PublicController extends Controller
             ->with('testimonials', $testimonials)->with('description', $description)
             ->with('author', $author)->with('title', $title)
             ->with('features_card', $features_card);
-    }   
+    }
     /**
     Code By Aditya Rathore
     */
@@ -789,7 +792,7 @@ class PublicController extends Controller
         $data = DB::table($table)->count();
         return $data;
     }
-    public function planCount(){ 
+    public function planCount(){
         return [
             "wrdp" => $this->dbCount('r_d_p_plans'),
             "clvps" => $this->dbCount('v_p_s_plans'),
@@ -825,6 +828,23 @@ class PublicController extends Controller
         $data = cache()->remember('features_card', now()->addHours(24), function () {
             return DB::table('features_card')->get();
         });
+        return $data;
+    }
+
+    public function DBsliders(){
+        $data = cache()->remember('sliders', now()->addHours(24), function () {
+            return DB::table('sliders')->get();
+        });
+        return $data;
+    }
+
+    public function DBblog(){
+        $data = cache()->remember('posts', now()->addHours(24), function () {
+            return DB::table('posts')->join('users','posts.post_by','=','users.id')
+            ->select('posts.*', 'users')
+            ->get();
+        });
+        // dd($data);
         return $data;
     }
 }

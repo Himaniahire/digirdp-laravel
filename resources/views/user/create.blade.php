@@ -16,7 +16,7 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">User</a>
+            <a href="{{ route('user.index')}}">User</a>
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>
@@ -39,7 +39,6 @@
                         <div class="row">
                             @foreach($fields as $field => $fv)
                             <div class="col-lg-6">
-
                                 <div class="form-group{{ $errors->has($fv['name']) ? ' has-error' : '' }}">
                                     <label class=" control-label"
                                             for="NEW_subject">{{$fv['label']}} : <sup class="required" style="color:red; font-size:16px;">*</sup>
@@ -66,11 +65,84 @@
                                                     <strong>{{ $errors->first($fv['name']) }}</strong>
                                                 </span>
                                             @endif
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="NEW_subject">Profile <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                    </label>
+                                    <div class="" >
+                                        <div class="input-group">
+                                            <input type="file"  name="feature_image">
+                                            @if(isset($feature_image) && $feature_image)
+                                                <a href="{{ asset($feature_image) }}" target="_blank">
+                                                    <img src="{{ asset($feature_image) }}" style="width:10%">
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="NEW_subject">Select Sidebar  <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                    </label>
+                                    <div class="" >
+                                        <div class="input-group">
+                                            <select class="form-control border-input" name="role" >
+                                                <option value="1">Admin</option>
+                                                <option value="2">Editor</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="NEW_subject">Select Sidebar <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                </label>
+                                <div class="" >
+                                    <div class="input-group">
+                                        @php $sidebarItem = Config::get('app.sidebar');
+                                            $permission_array = [];
+                                            // $permission = ${$singlepostvar}->permission;
+                                            // $feature_image = ${$singlepostvar}->feature_image;
+                                            // $permission_array = ($permission && $permission != 'null' )? json_decode($permission) : [];
+                                            @endphp
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Select</th>
+                                                    <th>Label</th>
+                                                    <th>Route</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($sidebarItem as $item)
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" name="permission[]" value="{{ $item['route'] }}"
+                                                            {{ in_array($item['route'], $permission_array) ? 'checked' : '' }}>
+                                                        </td>
+                                                        <td>{{ $item['label'] }}</td>
+                                                        <td>{{ $item['route'] }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card-action">
+                                    {!! Form::submit('Submit', array('class' => 'btn btn-success btn-block', 'id' => 'submit'  ))  !!}
+                                </div>
+                            </div>
 
 
                         </div>
