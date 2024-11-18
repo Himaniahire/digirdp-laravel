@@ -16,7 +16,8 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">Dashboard</a>
+            <a href="{{ route('testimonials.index')}}">Testimonial</a>
+            
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>
@@ -84,5 +85,13 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                 
+=======
 
+>>>>>>> 5b9ca5030e85407618f3a7b09dfd54fe436abd9a
+=======
+
+>>>>>>> Nikesh
 @endsection

@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">Hosting</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,7 +15,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('hosting.index')}}">Hosting</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> {{$createvar['title']}}
 
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
+
                    </h4>
 
                 </div>
@@ -61,7 +61,7 @@
                                         @elseif(!strcmp($fv['type'], 'select'))
                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'textarea'))
-                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
+                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['class' => 'editor']) !!}
                                         @elseif(!strcmp($fv['type'], 'checkbox'))
                                             {!! Form::checkbox($fv['name'], $fv['default'], $fv['checked']) !!}
                                         @elseif(!strcmp($fv['type'], 'radio'))

@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> {{$createvar['title']}}
 
-                        <a href="{{ route($route['index']) }}" class="btn btn-primary pull-right" ><i class="fas fa-angle-left"></i> Cancel</a>
+
                    </h4>
 
                 </div>
@@ -59,7 +59,7 @@
                                         @if (!strcmp($fv['type'], 'text'))
                                             {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'textarea'))
-                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
+                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['class' => 'editor']) !!}
                                         @elseif(!strcmp($fv['type'], 'select'))
                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                         @elseif(!strcmp($fv['type'], 'checkbox'))

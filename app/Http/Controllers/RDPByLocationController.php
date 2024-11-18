@@ -51,6 +51,8 @@ class RDPByLocationController extends Controller
     private $saveSuccess    = 'The rdp by location  was successfully saved.';
     private $deletionSuccess = 'RDP By Location  Deleted Successfully';
     private $updationSuccess = 'RDP By Location  Updated Successfully';
+    private $publishSuccess = 'RDP By Location published Successfully';
+    private $unpublishSuccess = 'RDP By Location unpublished Successfully';
     private $singlepostvar  = "rdplocation";
     private $multipostvar   = "rdplocation";
     private $indexpagination = 10;
@@ -135,7 +137,7 @@ class RDPByLocationController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'keyword',
                 'placeholder' => 'SEO Keyword',
                 'required' => ''
@@ -209,8 +211,8 @@ class RDPByLocationController extends Controller
         'name'  => array('label' => 'RDP By Location Name' ),
         'logo' => array('label' => 'RDP By Location Logo' ),
         'start_price'  => array('label' => 'RDP By Location Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -223,8 +225,8 @@ class RDPByLocationController extends Controller
         'url_text' => array('label' => 'URL Text'),
         'logo' => array('label' => 'RDP By Location Logo' ),
         'start_price'  => array('label' => 'RDP By Location Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );
@@ -432,6 +434,7 @@ class RDPByLocationController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -442,6 +445,7 @@ class RDPByLocationController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

@@ -16,7 +16,7 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">Dashboard</a>
+            <a href="{{ route('user.index')}}">User</a>
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>
@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Testimonial Edit</div>
+                        <div class="card-title">User Edit</div>
                     </div>
                     <div class="card-body">
                         {!! Form::model(${$singlepostvar}, ['route' => [$route['update'], ${$singlepostvar}->id], 'class' => 'form-horizontal', 'method' => 'PUT', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files'=> true]) !!}

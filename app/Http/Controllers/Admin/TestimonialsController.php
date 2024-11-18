@@ -87,7 +87,7 @@ class TestimonialsController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'testimonials',
                 'placeholder' => 'Enter Testimonials Here',
                 'required' => 'required',

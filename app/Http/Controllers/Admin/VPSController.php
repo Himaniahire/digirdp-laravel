@@ -51,6 +51,8 @@ class VPSController extends Controller
     private $saveSuccess    = 'The CLOUD VPS  was successfully saved.';
     private $deletionSuccess = 'CLOUD VPS  Deleted Successfully';
     private $updationSuccess = 'CLOUD VPS  Updated Successfully';
+    private $publishSuccess = 'VPS published Successfully';
+    private $unpublishSuccess = 'VPS unpublished Successfully';
     private $singlepostvar  = "vps";
     private $multipostvar   = "vps";
     private $indexpagination = 10;
@@ -147,7 +149,7 @@ class VPSController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'keyword',
                 'placeholder' => 'SEO Keyword',
                 'required' => ''
@@ -208,8 +210,8 @@ class VPSController extends Controller
         'name'  => array('label' => 'CLOUD VPS Name' ),
         'logo' => array('label' => 'CLOUD VPS Logo' ),
         'start_price'  => array('label' => 'CLOUD VPS Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 
@@ -224,8 +226,8 @@ class VPSController extends Controller
         'start_price'  => array('label' => 'CLOUD VPS Pricing' ),
         'created_at'=> array('label' => 'Created At'),
         'updated_at'=> array('label' => 'Updated At'),
-        'show_in_header'=> array('label' => 'Show in Header'),
-        'show_in_footer'=> array('label' => 'Show in Footer'),
+        // 'show_in_header'=> array('label' => 'Show in Header'),
+        // 'show_in_footer'=> array('label' => 'Show in Footer'),
     );
 
 
@@ -430,6 +432,7 @@ class VPSController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -440,6 +443,7 @@ class VPSController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

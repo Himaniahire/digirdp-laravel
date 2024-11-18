@@ -103,7 +103,7 @@ class Policies extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'header',
                 'placeholder' => 'Enter Eligibility Here',
                 'required' => '',
@@ -139,7 +139,7 @@ class Policies extends Controller
         'type' => array('label' => 'Type'),
         'start_date'=> array('label' => 'Start Date'),
         'content' => array('label' => 'Content'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

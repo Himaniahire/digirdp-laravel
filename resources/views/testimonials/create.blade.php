@@ -16,7 +16,7 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">Dashboard</a>
+            <a href="{{ route('testimonials.index')}}">Testimonial</a>
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>

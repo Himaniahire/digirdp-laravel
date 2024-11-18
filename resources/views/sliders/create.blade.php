@@ -55,7 +55,7 @@
                                             @if (!strcmp($fv['type'], 'text'))
                                                 {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                             @elseif(!strcmp($fv['type'], 'textarea'))
-                                                {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['id' => 'editor']) !!}
+                                                {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['class' => 'editor']) !!}
                                             @elseif(!strcmp($fv['type'], 'select'))
                                                 {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                             @elseif(!strcmp($fv['type'], 'checkbox'))

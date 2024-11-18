@@ -52,6 +52,8 @@ class WindowsRDPController extends Controller
     private $saveSuccess    = 'The RDP  was successfully saved.';
     private $deletionSuccess = 'RDP  Deleted Successfully';
     private $updationSuccess = 'RDP  Updated Successfully';
+    private $publishSuccess = 'RDP published Successfully';
+    private $unpublishSuccess = 'RDP unpublished Successfully';
     private $singlepostvar  = "rdp";
     private $multipostvar   = "rdp";
     private $indexpagination = 10;
@@ -123,7 +125,7 @@ class WindowsRDPController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'text',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input  ',
                 'id' => 'description',
                 'placeholder' => 'Enter RDP Description here',
                 'required' => ''
@@ -136,7 +138,7 @@ class WindowsRDPController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'keyword',
                 'placeholder' => 'SEO Keyword',
                 'required' => ''
@@ -238,8 +240,8 @@ class WindowsRDPController extends Controller
         'logo' => array('label' => 'RDP Logo' ),
         'start_price'  => array('label' => 'RDP Pricing' ),
         'menu_item_name' => array('label' => 'Menu Category' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
         'show_in_header'=> array('label' => 'Show in Header'),
         'show_in_footer'=> array('label' => 'Show in Footer'),
     );
@@ -467,6 +469,7 @@ class WindowsRDPController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -477,6 +480,7 @@ class WindowsRDPController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

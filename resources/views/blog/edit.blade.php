@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Blog</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('blogs.index')}}">Blogs</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -92,7 +92,7 @@
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Description<sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea name="description" id="description">{{ $post->description ?? '' }}</textarea>
+                                <textarea name="description" class="editor" id="description">{{ $post->description ?? '' }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -111,28 +111,28 @@
                                     <label class="col-lg-4 control-label" for="NEW_subject">Meta Title<sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="col-lg-8" >
-                                        <textarea class="form-control" name="meta_title">{{ $post->meta_title ?? '' }}</textarea>
+                                        <textarea class="form-control editor" name="meta_title">{{ $post->meta_title ?? '' }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-4 control-label" for="NEW_subject" >Meta Keywords<sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="col-lg-8" >
-                                        <textarea class="form-control" name="meta_keywords" required>{{ $post->meta_keywords ?? '' }}</textarea>
+                                        <textarea class="form-control editor" name="meta_keywords" required>{{ $post->meta_keywords ?? '' }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-lg-4 control-label" for="NEW_subject">Meta Descriptions<sup class="required" style="color:red; font-size:16px;">*</sup>
+                                    <label class="col-lg-4 control-label editor" for="NEW_subject">Meta Descriptions<sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="col-lg-8" >
-                                        <textarea class="form-control" name="meta_descriptions" required>{{ $post->meta_descriptions ?? '' }}</textarea>
+                                        <textarea class="form-control editor" name="meta_descriptions" required>{{ $post->meta_descriptions ?? '' }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-4 control-label" for="NEW_subject">Tags<sup class="required" style="color:red; font-size:16px;">*</sup>
                                     </label>
                                     <div class="col-lg-8" >
-                                        <textarea class="form-control" name="tags">{{ $post->tags ?? '' }}</textarea>
+                                        <textarea class="form-control editor" name="tags">{{ $post->tags ?? '' }}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -53,6 +53,8 @@ class VPSPlanController extends Controller
     private $saveSuccess    = 'The VPS PLAN was successfully saved.';
     private $deletionSuccess = 'VPS PLAN Deleted Successfully';
     private $updationSuccess = 'VPS PLAN updated Successfully';
+    private $publishSuccess = 'VPS PLAN published Successfully';
+    private $unpublishSuccess = 'VPS PLAN unpublished Successfully';
     private $singlepostvar  = "vpsplan";
     private $multipostvar   = "vpsplan";
     private $indexpagination = 10;
@@ -753,6 +755,7 @@ class VPSPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->back();
     }
 
@@ -763,6 +766,7 @@ class VPSPlanController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->back();
     }
 

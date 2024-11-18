@@ -16,13 +16,13 @@
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="/">Dashboard</a>
+            <a href="{{ route('about.index')}}">About</a>
           </li>
           <li class="separator">
             <i class="icon-arrow-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">Edit</a>
+            <a href="{{ route('about.index')}}">Edit</a>
           </li>
         </ul>
       </div>
@@ -44,7 +44,7 @@
                                 @if(!strcmp($fv['type'], "text"))
                                     {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                 @elseif(!strcmp($fv['type'], "textarea"))
-                                    {!! Form::textarea($fv['name'], $fv['default'], array_merge($fv['extras'], ['id' => 'editor'])) !!}
+                                    {!! Form::textarea($fv['name'], $fv['default'], array_merge($fv['extras'], ['class' => 'editor'])) !!}
                                 @elseif(!strcmp($fv['type'], "select"))
                                     {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                 @elseif(!strcmp($fv['type'], "checkbox"))

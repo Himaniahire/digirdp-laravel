@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">Configuration</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,13 +15,13 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                          <a href="{{route('configuration.index')}}">Configuration</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">Configuration</a>
+                          <a href="{{ route('configuration.index')}}">Edit</a>
                         </li>
                     </ul>
             </div>
@@ -52,7 +52,7 @@
                                                         @if(!strcmp($fv['type'], "text"))
                                                             {!! Form::text($fv['name'], $fv['default'], $fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "textarea"))
-                                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras']) !!}
+                                                            {!! Form::textarea($fv['name'], $fv['default'], $fv['extras'], ['class' => 'editor']) !!}
                                                         @elseif(!strcmp($fv['type'], "select"))
                                                             {!! Form::select($fv['name'], $fv['choices'], $fv['default'], $fv['extras']) !!}
                                                         @elseif(!strcmp($fv['type'], "checkbox"))
@@ -96,41 +96,6 @@
                     </fieldset>
                 </div>
             </div>
-            {{-- <div class="row">
-                <div class="col-md-12">
-                    <div class="card ">
-                        <div class="card-header text-center">
-                            <div class="card-title">Login</div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <form action="" method="post">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="email2">Email Address</label>
-                                        <input type="email" class="form-control" id="email2"
-                                            placeholder="Enter Email" />
-                                        <small id="emailHelp2" class="form-text text-muted">We'll never share
-                                            your email with anyone
-                                            else.</small>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password"
-                                            placeholder="Password" />
-                                    </div>
-                                    <div class="form-group text-center">
-                                        <button class="btn btn-success">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> --}}
         </div>
 
 

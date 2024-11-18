@@ -7,7 +7,7 @@
                     <h3 class="fw-bold mb-3">RPD Plan</h3>
                     <ul class="breadcrumbs mb-3">
                         <li class="nav-home">
-                          <a href="#">
+                          <a href="/">
                             <i class="icon-home"></i>
                           </a>
                         </li>
@@ -15,7 +15,7 @@
                           <i class="icon-arrow-right"></i>
                         </li>
                         <li class="nav-item">
-                          <a href="#">DashBoard</a>
+                            <a href="{{ route('rdpplan.index')}}">RPD  Plan</a>
                         </li>
                         <li class="separator">
                           <i class="icon-arrow-right"></i>
@@ -76,17 +76,30 @@
                                                     @endif
                                                 @endforeach
                                                 <td class="actions">
+                                                    @if(!$notice->is_published)
+				                                <a href="{{ route($route['publish'], $notice->id)}}">
+				                                    <button title="publish" class="btn btn-lg btn-link btn-success">
+				                                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+				                                    </button>
+				                                </a>
+				                                @else
+				                                <a href="{{ route($route['unpublish'], $notice->id)}}">
+				                                    <button title="unpublish" class="btn btn-lg btn-link btn-danger">
+				                                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+				                                    </button>
+				                                </a>
+				                                @endif
                                                     <a href="{{ route($route['show'], $notice->id)}}">
-                                                        <button class="btn btn-sm btn-info">
+                                                        <button title="Detail" class="btn btn-lg btn-link btn-info">
                                                             <i class="fas fa-eye" aria-hidden="true"></i>
                                                         </button>
                                                     </a>
                                                     <a href="{{ route($route['edit'], $notice->id) }}">
-                                                        <button class="btn btn-sm btn-warning">
+                                                        <button title="Edit" class="btn btn-lg btn-link btn-primary">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>
-                                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-sm mt-0" style="margin-top: -15px;">
+                                                    <a href="#" title="Delete" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $notice->id }}').submit();" class="btn btn-danger btn-lg btn-link mt-0" style="margin-top: -15px;">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
 
@@ -96,7 +109,7 @@
                                                     </form>
 
                                                     <a href="{{ route($route['duplicate'], $notice->id) }}">
-                                                        <button class="btn btn-sm btn-secondary">
+                                                        <button title="Copy" class="btn btn-lg btn-link btn-secondary">
                                                             <i class="fa fa-copy"></i>
                                                         </button>
                                                     </a>

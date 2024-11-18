@@ -136,7 +136,7 @@ class Configuration extends Controller
             'field_icon' => 'fa fa-file',
             'type' => 'textarea',
             'default' => null,
-            'extras' => array('class' => 'form-control border-input',
+            'extras' => array('class' => 'form-control border-input editor',
                 'id' => 'state',
                 'placeholder' => 'Enter SEO Keywords'
             )
@@ -148,7 +148,7 @@ class Configuration extends Controller
             'field_icon' => 'fa fa-file',
             'type' => 'textarea',
             'default' => null,
-            'extras' => array('class' => 'form-control border-input',
+            'extras' => array('class' => 'form-control border-input editor',
                 'id' => 'state',
                 'placeholder' => 'Enter Code to add above head tag'
             )
@@ -160,7 +160,7 @@ class Configuration extends Controller
             'field_icon' => 'fa fa-file',
             'type' => 'textarea',
             'default' => null,
-            'extras' => array('class' => 'form-control border-input',
+            'extras' => array('class' => 'form-control border-input editor',
                 'id' => 'state',
                 'placeholder' => 'Enter Code to add in footer tag'
             )

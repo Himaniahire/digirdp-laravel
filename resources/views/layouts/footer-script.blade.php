@@ -17,7 +17,7 @@
     <script src="{{ asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
 
     <!-- Bootstrap Notify -->
-    {{-- <script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script> --}}
+    <script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
     <!-- jQuery Vector Maps -->
     <script src="{{ asset('assets/js/plugin/jsvectormap/jsvectormap.min.js')}}"></script>
@@ -36,34 +36,7 @@
     {{-- CKEditor5 Js --}}
     <script src="{{ asset('assets/js/ckeditor5.js')}}"></script>
 
-    <script>
-      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#177dff",
-        fillColor: "rgba(23, 125, 255, 0.14)",
-      });
 
-      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#f3545d",
-        fillColor: "rgba(243, 84, 93, .14)",
-      });
-
-      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
-        type: "line",
-        height: "70",
-        width: "100%",
-        lineWidth: "2",
-        lineColor: "#ffa534",
-        fillColor: "rgba(255, 165, 52, .14)",
-      });
-    </script>
     {{-- CKEditor5 --}}
 
     <script type="importmap">
@@ -85,20 +58,22 @@
             Font
         } from 'ckeditor5';
 
-        ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-                plugins: [ Essentials, Paragraph, Bold, Italic, Font ],
-                toolbar: [
-                    'undo', 'redo', '|', 'bold', 'italic', '|',
-                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
-                ]
-            } )
-            .then( editor => {
-                window.editor = editor;
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
+        document.querySelectorAll('.editor').forEach((textarea) => {
+            ClassicEditor
+                .create(textarea, {
+                    plugins: [Essentials, Paragraph, Bold, Italic, Font],
+                    toolbar: [
+                        'undo', 'redo', '|', 'bold', 'italic', '|',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                    ]
+                })
+                .then(editor => {
+                    console.log('Editor initialized for:', textarea);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
     </script>
 
     <script>
@@ -157,6 +132,27 @@
             $("#addRowModal").modal("hide");
         });
         });
+
+        $(document).ready(function() {
+            // Add active class based on the current URL
+            var currentUrl = window.location.href;
+
+            $('.nav-item a').each(function() {
+                if (currentUrl.indexOf($(this).attr('href')) !== -1) {
+                    $(this).parent().addClass('active'); // Add active to the <li> of the matching <a>
+                }
+            });
+
+            // When a <li> item is clicked
+            $('.nav-item').click(function() {
+                // Remove the 'active' class from all <li> items
+                $('.nav-item').removeClass('active');
+
+                // Add the 'active' class to the clicked <li> item
+                $(this).addClass('active');
+            });
+        });
+
     </script>
   </body>
 </html>

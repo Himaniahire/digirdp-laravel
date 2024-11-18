@@ -18,9 +18,9 @@ Auth::routes();
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-// Route::get('/index', function () {
-//     return view('index');
-// });
+Route::get('/index', function () {
+    return view('index');
+});
 
 // Route::get('/add_form', function () {
 //     return view('add_form');

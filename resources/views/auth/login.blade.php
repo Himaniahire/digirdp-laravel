@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Glassmorphism Login</title>
+    <title>Digirpd Admin Login</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-
+    <link
+      rel="icon"
+      href="{{ asset('assets/img/digirpd-logo/bgwithoutbg.ico')}}"
+      type="image/x-icon"
+    />
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>

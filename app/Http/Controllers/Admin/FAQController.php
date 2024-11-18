@@ -88,7 +88,7 @@ class FAQController extends Controller
             'field_icon' => 'glyphicon glyphicon-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'answer',
                 'placeholder' => 'Enter FAQ Answer here',
                 'required' => ''
@@ -123,7 +123,7 @@ class FAQController extends Controller
         'question'  => array('label' => 'Question' ),
         'category_name'  => array('label' => 'Category' ),
         // 'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
 

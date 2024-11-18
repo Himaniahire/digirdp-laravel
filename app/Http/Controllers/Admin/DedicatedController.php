@@ -51,6 +51,8 @@ class DedicatedController extends Controller
     private $saveSuccess    = 'The dedicated  was successfully saved.';
     private $deletionSuccess = 'Dedicated  Deleted Successfully';
     private $updationSuccess = 'Dedicated  Updated Successfully';
+    private $publishSuccess = 'Dedicated published Successfully';
+    private $unpublishSuccess = 'Dedicated unpublished Successfully';
     private $singlepostvar  = "dedicated";
     private $multipostvar   = "dedicated";
     private $indexpagination = 10;
@@ -124,7 +126,7 @@ class DedicatedController extends Controller
             'field_icon' => 'fa fa-pencil',
             'type'  =>  'textarea',
             'default' => null,
-            'extras'=> array('class' => 'form-control border-input',
+            'extras'=> array('class' => 'form-control border-input editor',
                 'id' => 'keyword',
                 'placeholder' => 'SEO Keyword',
                 'required' => ''
@@ -213,8 +215,8 @@ class DedicatedController extends Controller
         'name'  => array('label' => 'Dedicated Name' ),
         'logo' => array('label' => 'Dedicated Logo' ),
         'start_price'  => array('label' => 'Dedicated Pricing' ),
-        'created_at'=> array('label' => 'Created At'),
-        'updated_at'=> array('label' => 'Updated At'),
+        // 'created_at'=> array('label' => 'Created At'),
+        // 'updated_at'=> array('label' => 'Updated At'),
     );
 
     private $showfields = array(
@@ -431,6 +433,7 @@ class DedicatedController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 1;
         $post->save();
+        Session::flash('success', $this->unpublishSuccess);
         return redirect()->route($this->route['index']);
     }
 
@@ -441,6 +444,7 @@ class DedicatedController extends Controller
         $post = $this->modelname::find($id);
         $post->$publishfield = 0;
         $post->save();
+        Session::flash('success', $this->publishSuccess);
         return redirect()->route($this->route['index']);
     }
 

@@ -7,7 +7,7 @@
                 <h3 class="fw-bold mb-3">Blogs</h3>
                 <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
-                        <a href="#">
+                        <a href="/">
                             <i class="icon-home"></i>
                         </a>
                     </li>
@@ -15,7 +15,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">DashBoard</a>
+                        <a href="{{ route('blogs.index')}}">Blogs</a>
                     </li>
                     <li class="separator">
                         <i class="icon-arrow-right"></i>
@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <h4 class="title" style="font-weight: bold;"> Blogs
 
-                        <a href="{{ route('blog.index') }}" class="btn btn-primary float-end btn-round ms-auto" ><i class="fas fa-angle-left"></i> Cancel</a>
+
                    </h4>
                 </div>
                 <div class="card-body">
@@ -79,7 +79,7 @@
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Description <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea id="description" name="description"></textarea>
+                                <textarea id="description" class="editor" name="description"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -91,25 +91,25 @@
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Meta Title <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea class="form-control" name="meta_title"></textarea>
+                                <textarea class="form-control editor" name="meta_title"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Meta Keywords <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea class="form-control" name="meta_keywords" required></textarea>
+                                <textarea class="form-control editor" name="meta_keywords" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Meta Descriptions <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea class="form-control" name="meta_descriptions" required></textarea>
+                                <textarea class="form-control editor" name="meta_descriptions" required></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-4 control-label" for="NEW_subject">Tags <sup class="required" style="color:red; font-size:16px;">*</sup></label>
                             <div class="col-lg-8">
-                                <textarea class="form-control" name="tags"></textarea>
+                                <textarea class="form-control editor" name="tags"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
