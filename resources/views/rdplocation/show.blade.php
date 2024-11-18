@@ -111,7 +111,7 @@
                                                     </button>
                                                 </a>
                                                 <a href="{{route('rdpplan.edit', $notice->id)}}">
-                                                    <button title="edit" class="btn btn-sm btn-primary">
+                                                    <button title="edit" class="btn btn-lg btn-link btn-primary">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
                                                 </a>

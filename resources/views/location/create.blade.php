@@ -37,28 +37,36 @@
                     <div class="card-body" >
                         <h5>
                             {!! Form::open(array('route'=>'location.store','class' => 'form-horizontal', 'data-parsley-validate' => '', 'autocomplete' => 'off', 'files' => true)) !!}
-                                <div class="form-group">
-                                    <label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required" style="color:red; font-size:16px;">*</sup>
-                                    </label>
-                                    <div class="col-lg-8" >
-                                        <div class="input-group">
-                                            <input type="text" name="name" class="form-control" required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label" for="NEW_subject">Location Name <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                        </label>
+                                        <div class="col-lg-8" >
+                                            <div class="input-group">
+                                                <input type="text" name="name" class="form-control" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-lg-4 control-label" for="NEW_subject">Location Iframe <sup class="required" style="color:red; font-size:16px;">*</sup>
-                                    </label>
-                                    <div class="col-lg-8" >
-                                        <div class="input-group">
-                                            <input type="text" name="iframe" class="form-control" required>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-lg-4 control-label" for="NEW_subject">Location Iframe <sup class="required" style="color:red; font-size:16px;">*</sup>
+                                        </label>
+                                        <div class="col-lg-8" >
+                                            <div class="input-group">
+                                                <input type="text" name="iframe" class="form-control" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
                                 <div class="form-group" style="width: 40%;">
                                     {!! Form::submit('Add Location', array('class' => 'btn pull-down btn-success btn-lg col-lg-10 col-md-offset-2 col-xs-offset-3 text-center', 'id' => 'submit'  )) !!}
                                 </div>
+                                </div>
                             {!! Form::close() !!}
+                            </div>
 
 				        </h5>
                     </div>

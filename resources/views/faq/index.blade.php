@@ -82,7 +82,7 @@
                                                         </button>
                                                     </a>
                                                     <a href="{{ route($route['edit'], $notice->id) }}">
-                                                        <button title="Edit" class="btn btn-lg btn-link btn-warning">
+                                                        <button title="Edit" class="btn btn-lg btn-link btn-primary">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
                                                     </a>

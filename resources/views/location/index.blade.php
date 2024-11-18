@@ -43,7 +43,7 @@
                                             <tr>
                                                 <th>SN</th>
                                                 <th>Title</th>
-                                                <th>Status</th> 
+                                                <th>Status</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -63,7 +63,7 @@
                                                     @endif
 
                                                 </td>
-                                                <td>{{ $bl->user->name ?? '' }}</td>
+                                                {{-- <td>{{ $bl->user->name ?? '' }}</td> --}}
                                                 <td class="actions">
                                                     {{-- <!-- <a href="{{ route('blogs.edit',['blog'=>$bl->id]) }}">
                                                         <button class="btn btn-sm btn-primary">

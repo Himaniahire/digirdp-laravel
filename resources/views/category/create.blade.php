@@ -28,8 +28,8 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4 class="title" style="font-weight: bold;"> Blogs
-                            
+                    <h4 class="title" style="font-weight: bold;"> Category
+
                         </h4>
                    </h4>
                 </div>

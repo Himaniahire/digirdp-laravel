@@ -31,7 +31,9 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <h4 class="card-title">Dedicated Server</h4>
-                           
+                            <a href="{{ route($route['create']) }}" class="btn btn-primary btn-round ms-auto"><i class="fa fa-plus ms-1"></i> Dedicated Sever
+                            </a>
+
                         </div>
                     </div>
                     <!-- Content goes here -->
